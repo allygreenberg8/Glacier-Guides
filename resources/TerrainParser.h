@@ -43,18 +43,16 @@ public:
     const std::vector<Trail> getTrails() const;
 
 private:
-    // Vector holding stored map points that will make up each trail
+    // Vector holding stored points that will make up each trail
     std::vector<Point> points;
+    // Vector holding stored all the trails stored (each trail is a specific group of points)
     std::vector<Trail> trails;
+    // Unordered map for quick access of map points by referencing them by their id given in OpenSkiMap
     std::unordered_map<long long, Point> skiMap;
-
+    // Function will parse the xml files from OpenSkiMap to extract all needed points data
     void pointParser(const pugi::xml_node& point);
+    // Function will parse the xml files from OpenSkiMap to extract all needed trailcd data
     void trailParser(const pugi::xml_node& trail);
-
-
-
-
-
 };
 
 
