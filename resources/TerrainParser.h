@@ -4,6 +4,8 @@
 #include <string>
 #include <map>
 #include <unordered_map>
+#include <fstream>
+#include <sstream>
 #include "pugixml.hpp"
 
 
@@ -24,10 +26,12 @@ struct Trail
 {
     // Unique ID for path from OpenSkiMap
     long long id;
-    // Points that make up this path
+    // Points that make up this path (container of xml_node references)
     std::vector<long long> trailPoints;
     // If name available, store name of path here:
     std::string trailName;
+    // Stores what type of trail the the path is (ie. trail or lift)
+    std::string trailType;
 };
 
 
@@ -38,9 +42,9 @@ public:
     // Function loads in OpenSkiMap file and returns true if successful
     bool loadFile(const std::string& fileName);
     // Retrieves stored points and returns a constant reference to them
-    const std::vector<Point> getPoints() const;
+    const std::vector<Point>& getPoints() const;
     // Retrieves stored trails and returns a constant reference to them
-    const std::vector<Trail> getTrails() const;
+    const std::vector<Trail>& getTrails() const;
 
 private:
     // Vector holding stored points that will make up each trail
