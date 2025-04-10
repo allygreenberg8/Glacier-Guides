@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\bgris\CLionProjects\Glacier-Guides\CMakeFiles\6e5241b666d8d50f736176f4aa2467e8\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{641E78F3-E74D-3318-A9F4-C453D7139002}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
