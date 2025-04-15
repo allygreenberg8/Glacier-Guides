@@ -1,6 +1,8 @@
 #include <iostream>
 #include <unordered_map>
 #include <list>
+#include "TerrainParser.h"
+#include "TerrainParser.cpp"
 using namespace std;
 
 struct Pin{
@@ -42,5 +44,7 @@ class Graph{
     }
 
     void findShortestPath(int start, int end); // Dijkstra's algorithm
+
+    void buildGraphFromParsed(const TerrainParser& parser);
 
 };
