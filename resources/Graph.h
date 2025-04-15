@@ -5,12 +5,14 @@ using namespace std;
 
 struct Pin{
     // node is representative of a location - pin on the map 
-    int pin_ID;
-    double latitude;    // north/south
-    double longitude;   // east/west
-    double elevation;   // height
+    int pin_ID = 0;
+    double latitude = 0.0;    // north/south
+    double longitude = 0.0;   // east/west
+    double elevation = 0.0;
 
     // Constructor
+    Pin() = default;
+
     Pin(int pin_ID, double latitude, double longitude, double elevation){
         this->pin_ID = pin_ID;
         this->latitude = latitude;
@@ -38,5 +40,7 @@ class Graph{
     const unordered_map <int, list<pair<int, double>>>& getAdjList() const{
         return adjList;
     }
+
+    void findShortestPath(int start, int end); // Dijkstra's algorithm
 
 };
