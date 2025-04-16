@@ -1,8 +1,10 @@
 #include <iostream>
 #include <unordered_map>
 #include <list>
+#include <vector>
 #include "TerrainParser.h"
 #include "TerrainParser.cpp"
+#include <cmath>
 using namespace std;
 
 struct Pin{

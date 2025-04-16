@@ -1,10 +1,4 @@
 #include "Graph.h"
-#include <iostream>
-#include <vector> 
-#include <unordered_map>
-#include "TerrainParser.h"
-#include "TerrainParser.cpp"
-using namespace std;
 
 // Using the haversine formula to acurately calculate the weights for the distance between two locations, need to use this formula because the Earth is spherical - https://www.movable-type.co.uk/scripts/latlong.html
 double haversine(double latitudeStart, double longitudeStart, double latitudeEnd, double longitudeEnd) {
