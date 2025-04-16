@@ -64,14 +64,20 @@ void Graph::buildGraphFromParsed(const TerrainParser& parser) {
         // we need to skip the lifts that are the edges 
         // this may need to be changed based on the what the data catagorizes the lift as
         if (trail.trailType == "lift" || trail.trailType == "chair_lift" || trail.trailType == "t-bar" || trail.trailType == "rope_tow" || trail.trailType == "j-bar" || trail.trailType == "drag_lift") {
-            // for each pair of points in the trail, add an edge between them
+            
+            // lifts - the weight is based only on distance
             for (int i = 0; i < trail.trailPoints.size() - 1; i++) {
                 int fromPoint = trail.trailPoints[i];
                 int toPoint = trail.trailPoints[i + 1];
+
                 // calculate the weight of the edge aka the distance using the haversine formula
                 double weight = haversine(pins[fromPoint].latitude, pins[fromPoint].longitude, pins[toPoint].latitude, pins[toPoint].longitude);
                 // add the downhill edge
                 addEdge(fromPoint, toPoint, weight);
+
+                // lifts have a fixed multiplier for their weights 
+                double weightMultiplier = weight * 1.5;
+                addEdge(fromPoint, toPoint, weightMultiplier);
             }
         }
         else{
@@ -84,8 +90,37 @@ void Graph::buildGraphFromParsed(const TerrainParser& parser) {
                 if (pins[fromPoint].elevation > pins[toPoint].elevation) {
                     // calculate the weight of the edge aka the distance using the haversine formula
                     double weight = haversine(pins[fromPoint].latitude, pins[fromPoint].longitude, pins[toPoint].latitude, pins[toPoint].longitude);
+                    
+                    // calculate elevation change
+                    double elevationChange = pins[fromPoint].elevation - pins[toPoint].elevation;
+
+                    // calculate the slope of the trail
+                    double slope = elevationChange / (weight * 1000); // multiple by 1000 to convert to meters
+                    
+                    // calculate saftey weights with reference to the slope that references the elevation
+                    double safety;
+                    // for beginners
+                    if (slope < 0.15){
+                        safety = 1.0;  //easy
+                    }
+                    // for intermediate
+                    if (slope < 0.25){
+                        safety = 1.2; //medium 
+                    }
+                    // for advanced 
+                    if (slope < 0.35){
+                        safety = 1.5; //hard
+                    }
+                    // for expert
+                    else{
+                        safety = 2.0; //extreme
+                    }
+
+                    // set the final weight of the edges that takes distance and safety into consideration
+                    double finalWeight = weight * safety; //remember weight here is the original distance
+                    
                     // add the downhill edge
-                    addEdge(fromPoint, toPoint, weight);
+                    addEdge(fromPoint, toPoint, finalWeight);
                 }
             }
         } 
