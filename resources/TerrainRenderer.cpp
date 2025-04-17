@@ -71,5 +71,21 @@ void TerrainRenderer::loadTerrain()
             minElevation = std::min(minElevation, elevationPt);
         }
     }
-
 }
+
+
+
+
+
+
+// Function that will draw terrain and the chosen paths to the display window
+// This function will be used in our main.cpp to call all of the needed helper functions for rendering our graph
+void TerrainRenderer::renderTerrain(sf::RenderWindow& mapWindow)
+{
+    // Call drawShades function to add shading to make graphical interface look closer to 3-dimensional
+    drawShades(mapWindow);
+    // Call drawPathLine function to draw line on graph for chosen path between starting and ending points
+    drawPathLine(mapWindow);
+}
+
+

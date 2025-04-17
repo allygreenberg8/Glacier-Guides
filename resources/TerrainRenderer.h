@@ -45,7 +45,7 @@ public:
     TerrainRenderer(const TerrainParser& terrainParser);
 
     // Function that will draw terrain and the chosen paths to the display window
-    void render(sf::RenderWindow& mapWindow);
+    void renderTerrain(sf::RenderWindow& mapWindow);
 
     // Function to take in path calculated by Dijsktra or A* so it can be drawn into map screen
     void choosePath(const std::vector<int>& path);
