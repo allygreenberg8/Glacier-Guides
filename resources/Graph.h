@@ -5,6 +5,8 @@
 #include "TerrainParser.h"
 #include "TerrainParser.cpp"
 #include <cmath>
+#include <limits>
+#include <queue>
 using namespace std;
 
 struct Pin{
@@ -45,7 +47,8 @@ class Graph{
         return adjList;
     }
 
-    void findShortestPath(int start, int end); // Dijkstra's algorithm
+    // Dijkstra's Shortest Path Algorithm
+    void findShortestPathDijkstra(int startVertex, const vector<vector<pair<int,int>>>& graph, vector<int>& distances);
 
     void buildGraphFromParsed(const TerrainParser& parser);
 

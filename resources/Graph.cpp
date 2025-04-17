@@ -25,10 +25,64 @@ double haversine(double latitudeStart, double longitudeStart, double latitudeEnd
     return distance;
 }
 
-void Graph::findShortestPath(int start, int end) {
+void Graph::findShortestPathDijkstra(int startVertex, const vector<vector<pair<int,int>>>& graph, vector<int>& distances)
+{
+    // Stores max value system can hold in order to represent initialization to infinity of each distance
+    const int infinity = numeric_limits<int>::max();
+
+    // Initialize graph.size() amount of elements and distances and initialize to infinity
+    for (int i = 0; i < graph.size(); i++)
+    {
+        distances[i] = infinity;
+    }
+    // Initialize distance for starting element to equal 0
+    distances[startVertex] = 0;
+
+    // Initialize minheap for storing (distance, vertex) pair - both will be int types
+    priority_queue<pair<int,int>, vector<pair<int,int>>, greater<>> minHeap;
+
+    // Add start index and startVertex itself to minheap in form (distance, vertex name)
+    minHeap.emplace(0,startVertex);
+
+    // While minHeap is not empty;
+    while (!minHeap.empty())
+    {
+        // Unpack tuple of root of minHeap (this will be the element we are relaxing its edges for in this iteration)
+        // Since this is a minHeap, this node will be the one with the smallest known distance
+        auto[distance, currentVertex] = minHeap.top();
+        // Pop this root out of minHeap now
+        minHeap.pop();
+
+        // If a better path to vertex, "currentVertex" has already been found, skip this vertex and continue to next iteration
+        if (distance > distances[currentVertex])
+        {
+            continue;
+        }
+
+        // Iterate through the adjacency list graph and adjacent vetices to graph[currentVertex] and perform relaxations
+        // Replace current distance values with relaxation values if the value found by relaxtion is less
+        for (unsigned int i = 0; i < graph[currentVertex].size(); ++i)
+        {
+            // Initialize neighbor vertex 'name' in this iteration
+            int neighbor = graph[currentVertex][i].first;
+            // Initialize edge weight between currentVertex and neighbor
+            int weight = graph[currentVertex][i].second;
+            // Calculate new distance using edge relaxation formula
+            int newDistance = distances[currentVertex] + weight;
+            // If this newDistance is less than the current distance for neighbor, replace the value
+            if (newDistance < distances[neighbor])
+            {
+                // Replace distance to neighbor with newDistance to neighbor in the minHeap
+                distances[neighbor] = newDistance;
+                minHeap.emplace(newDistance, neighbor);
+            }
+        }
+    }
+
 }
 
-void Graph::buildGraphFromParsed(const TerrainParser& parser) {
+void Graph::buildGraphFromParsed(const TerrainParser& parser)
+ {
     // get points
     const vector<Point>& points = parser.getPoints();
     // get trails 
