@@ -74,11 +74,75 @@ void TerrainRenderer::loadTerrain()
 }
 
 
+// Function to draw in shading to make map look three dimensional
+void TerrainRenderer::drawShades(sf::RenderWindow& window)
+{
+    // First we need to loop through the array of vertexes/points that make up the array
+    // Note: assuming array is N by N with N being the number of terrain points (ie. number of vertices)
+    for (int row = 0; row < terrainHeight; ++row)
+    {
+        for (int column = 0; column < terrainWidth; ++column)
+        {
+            // Store elevation pts in respective point in matrix
+            double elevationPoints = elevationData[row][column];
+            // Normalize the elevation of this point to a specified color density that will vary based on its elevation through this formula
+            float intensity = (elevationPoints-minElevation) / (maxElevation - minElevation);
+
+            // Now make this point on the map into its individual rectangle shape (per SFML protocol)
+            // Initilize each to a 10.0 by 10.0 rectangle
+            //sf::RectangleShape point(sf::Vector2f(10.f,10.f));
+            sf::RectangleShape point;
+            point.setSize(sf::Vector(10.f,10.f));
+            point.setPosition(column * 10.f, row * 10.f);
+            // Initialize color of point with higher elevations being a lighter color
+            // Note: multiplying by 255 normalizes the color intensities
+            point.setFillColor(sf::Color(intensity*255, intensity*255, intensity*255));
+            // Draw the point to screen now after iteration calculations are complete
+            window.draw(point);
+        }
+    }
+}
+
+
 // Function to take in path calculated by Dijsktra or A* so it can be drawn into map screen
 void TerrainRenderer::choosePath(const std::vector<double>& chosenPath)
 {
     // Sotre list of tile indices/ "terrain points" that make up the chosen path by either Dijkstra or A*
     pathStartStop = chosenPath;
+}
+
+
+// This function will take the given path points and scale them to fit at the appropriate points in our map and then draw a line between these points in red
+void TerrainRenderer::drawPathLine(sf::RenderWindow& mapWindow)
+{
+    // First check if there are no path points (this means a path was not found)
+    // If so --> return empty path
+    if (pathStartStop.empty())
+    {
+        return;
+    }
+
+    // For this next line of code I am getting errors for the type LineStrip that should be a part of the SFML library
+    // Create sfml line object for the path
+    sf::VertexArray path(sf::LineStrip, pathStartStop.size());
+
+    // Now iterate through array of N by N points and assign each point to a particular element of the array
+    for (size_t i = 0; i < pathStartStop.size(); ++i)
+    {
+        // Add this particular elment index to variable
+        int index = pathStartStop[i];
+        // Calculate column (x-coordinate) and row (y-coordinate)
+        // Error with this as well: unsure why terrainWidth causing error for column calculation
+        int column = index % terrainWidth;
+        int row = index / terrainWidth;
+
+        // Now calculate position and add red color to path point
+        path[i].position = sf::Vector2f(column*10.f, row*10.f);
+        path[i].color = sf::Color::Red;
+    }
+
+    // Now draw this path to the screen
+    mapWindow.draw(path);
 }
 
 
