@@ -36,7 +36,7 @@ int main()
     sf::RenderWindow mapWindow(sf::VideoMode(800,600), "Terrain Map");
     
     // Arbitrary test case path;
-    std::vector<double> examplePath = {10, 50, 60 , 80};
+    std::vector<int> examplePath = {10, 50, 60 , 80};
     terrainRenderer.choosePath(examplePath);
 
     // Now write code in to render window for sfml using events
@@ -57,7 +57,6 @@ int main()
             mapWindow.display();
         }
     }
-
 
 
     return 0;

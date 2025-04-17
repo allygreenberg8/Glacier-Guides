@@ -42,7 +42,7 @@ void TerrainRenderer::loadTerrain()
     terrainWidth = vertex;
 
     // Now we need to increase the size of the elevationData class-member vector to an N by N array by filling N^2 vertex elements set equal to 0
-    elevationData.assign(vertex, std::vector<double>(vertex,0.0));
+    elevationData.assign(vertex, std::vector<int>(vertex,0.0));
 
     // Now iterate through N^2 elements that will depict this terrain and calculate what the x and y indices of each will be
     // Once these indices are determined, extract the particular elevation member variable from the Elevation struct object that we are iterating through currently
@@ -92,7 +92,7 @@ void TerrainRenderer::drawShades(sf::RenderWindow& window)
             // Initilize each to a 10.0 by 10.0 rectangle
             //sf::RectangleShape point(sf::Vector2f(10.f,10.f));
             sf::RectangleShape point;
-            point.setSize(sf::Vector(10.f,10.f));
+            point.setSize(sf::Vector2f(10.f,10.f));
             point.setPosition(column * 10.f, row * 10.f);
             // Initialize color of point with higher elevations being a lighter color
             // Note: multiplying by 255 normalizes the color intensities
@@ -105,7 +105,7 @@ void TerrainRenderer::drawShades(sf::RenderWindow& window)
 
 
 // Function to take in path calculated by Dijsktra or A* so it can be drawn into map screen
-void TerrainRenderer::choosePath(const std::vector<double>& chosenPath)
+void TerrainRenderer::choosePath(const std::vector<int>& chosenPath)
 {
     // Sotre list of tile indices/ "terrain points" that make up the chosen path by either Dijkstra or A*
     pathStartStop = chosenPath;

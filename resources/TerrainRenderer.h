@@ -22,16 +22,16 @@ private:
     const TerrainParser& terrainParser;
 
     // This variable sotres a 2D vector of the elevations of the selected terrain
-    std::vector<std::vector<double>> elevationData;
+    std::vector<std::vector<int>> elevationData;
 
     // This variable stores the start and end points
-    std::vector<double> pathStartStop;
+    std::vector<int> pathStartStop;
 
     // Stores the width of the map screen that will display the terrain
-    double terrainWidth;
+    int terrainWidth;
     
     // Stores the height of the map screen that will display the terrain
-    double terrainHeight;
+    int terrainHeight;
 
     // Stores minimum elevation given for path
     double minElevation;
@@ -48,6 +48,6 @@ public:
     void renderTerrain(sf::RenderWindow& mapWindow);
 
     // Function to take in path calculated by Dijsktra or A* so it can be drawn into map screen
-    void choosePath(const std::vector<double>& path);
+    void choosePath(const std::vector<int>& path);
 
 };
