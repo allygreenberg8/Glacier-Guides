@@ -74,8 +74,12 @@ void TerrainRenderer::loadTerrain()
 }
 
 
-
-
+// Function to take in path calculated by Dijsktra or A* so it can be drawn into map screen
+void TerrainRenderer::choosePath(const std::vector<double>& chosenPath)
+{
+    // Sotre list of tile indices/ "terrain points" that make up the chosen path by either Dijkstra or A*
+    pathStartStop = chosenPath;
+}
 
 
 // Function that will draw terrain and the chosen paths to the display window

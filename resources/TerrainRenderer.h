@@ -25,7 +25,7 @@ private:
     std::vector<std::vector<double>> elevationData;
 
     // This variable stores the start and end points
-    std::vector<int> pathStartStop;
+    std::vector<double> pathStartStop;
 
     // Stores the width of the map screen that will display the terrain
     double terrainWidth;
@@ -48,6 +48,6 @@ public:
     void renderTerrain(sf::RenderWindow& mapWindow);
 
     // Function to take in path calculated by Dijsktra or A* so it can be drawn into map screen
-    void choosePath(const std::vector<int>& path);
+    void choosePath(const std::vector<double>& path);
 
 };
