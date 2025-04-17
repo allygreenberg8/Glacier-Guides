@@ -2,6 +2,8 @@
 #include "TerrainParser.h"
 #include <vector>
 #include <map>
+#include <cmath>
+#include <algorithm>
 
 
 class TerrainRenderer
@@ -17,7 +19,7 @@ private:
     void drawPathLine(sf::RenderWindow& mapWindow);
 
     // This variable stores a reference to the parsed data from the parser function in TerrainRenderer.cpp
-    const TerrainParser& terrainParserData;
+    const TerrainParser& terrainParser;
 
     // This variable sotres a 2D vector of the elevations of the selected terrain
     std::vector<std::vector<double>> elevationData;
@@ -37,7 +39,7 @@ private:
     // Stores user-input of maximum elevation chosen for path
     double maxElevation;
 
-    
+
 public:
     // Constructor that takes in parsed elevation data from my TerrainParser function in that file
     TerrainRenderer(const TerrainParser& terrainParser);
