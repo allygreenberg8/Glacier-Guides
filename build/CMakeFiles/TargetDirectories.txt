@@ -1,3 +1,0 @@
-C:/Users/bgris/CLionProjects/GlacierGuiders/Glacier-Guides/build/CMakeFiles/Glacier_Guides.dir
-C:/Users/bgris/CLionProjects/GlacierGuiders/Glacier-Guides/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/bgris/CLionProjects/GlacierGuiders/Glacier-Guides/build/CMakeFiles/ZERO_CHECK.dir
