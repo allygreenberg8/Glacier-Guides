@@ -32,17 +32,24 @@ int main()
     // Grab data
     // Parse terrain
     TerrainParser parser;
-    if (!parser.loadFile("map.osm"))
+    
+    // Loops through all OpenSkiMap files and parses the data
+    for (int i = 0; i < fileNames.size(); i++)
     {
-        std::cerr << "Failed to load terrain data.\n";
-        return 1;
+        if (!parser.loadFile(fileNames[i]))
+        {
+            std::cerr << "Failed to load terrain data.\n";
+            return 1;
+        }
+
+        parser.loadFile(fileNames[i])
+
+        const auto &points = parser.getPoints();
+        const auto &trails = parser.getTrails();
+
+        std::cout << "Number of points: " << points.size() << std::endl;
+        std::cout << "Number of trails: " << trails.size() << std::endl;
     }
-
-    const auto &points = parser.getPoints();
-    const auto &trails = parser.getTrails();
-
-    std::cout << "Number of points: " << points.size() << std::endl;
-    std::cout << "Number of trails: " << trails.size() << std::endl;
 
     // Find bounds for coordinate normalization
     double minLon = std::numeric_limits<double>::max();
