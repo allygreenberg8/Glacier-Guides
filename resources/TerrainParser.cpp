@@ -124,6 +124,7 @@ bool TerrainParser::loadElevationFile(const std::string& fileName)
         std::getline(data, longitudeString, ',');
         std::getline(data, elevationString, ',');
 
+        // If we have all this data, we can make a elevation point now
         if (!latitudeString.empty() && !longitudeString.empty() && !elevationString.empty())
         {
             Elevation elevationPoint;
