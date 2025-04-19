@@ -1,156 +1,128 @@
+#include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
 #include <iostream>
+#include <unordered_map>
+#include <vector>
 #include "TerrainParser.h"
 #include "TerrainRenderer.h"
+#include "Graph.h"
 
-// SFML 3.0 module headers
-// SFML Window module
-#include <SFML/Window.hpp>
-#include <SFML/Window/Event.hpp>
-#include <SFML/Window/VideoMode.hpp>
+// Window dimensions
+const unsigned int WINDOW_WIDTH = 800;
+const unsigned int WINDOW_HEIGHT = 600;
+const float SCALE_X = 5.0f;
+const float SCALE_Y = 5.0f;
 
-// SFML Graphics module
-#include <SFML/Graphics/RenderWindow.hpp>
-#include <SFML/Graphics/VertexArray.hpp>
-#include <SFML/Graphics/Color.hpp>
-#include <SFML/Graphics/PrimitiveType.hpp>
+// Function to normalize coordinates to fit the window
+sf::Vector2f normalizeCoordinates(double longitude, double latitude,
+                                  double minLon, double maxLon,
+                                  double minLat, double maxLat)
+{
+    float x = (longitude - minLon) / (maxLon - minLon) * WINDOW_WIDTH;
+    float y = (latitude - minLat) / (maxLat - minLat) * WINDOW_HEIGHT;
+    return {x, y};
+}
 
-int main(){
-    // Create terrain parser object
-    TerrainParser terrainParser;
-    // Check if terrain parsing for OpenSkiMap works correctly
-    if (terrainParser.loadFile("map.osm"))
-    {
-        std::cout << "TerrainParser parsed" << terrainParser.getPoints().size() << " points from OpenSkiMap." << std::endl;
-        std::cout << "TerrainParser parsed" << terrainParser.getTrails().size() << " trails from OpenSkiMap." << std::endl;
-    }
-    else
-    {
-        std::cerr << "TerrainParser failed to parse the OSM file from OpenSkiMap" << std::endl;
-    }
-    if (terrainParser.loadElevationFile("elevation.csv"))
-    {
-        std::cout << "TerrainParser parsed" << terrainParser.getElevation().size() << " points from OpenTopography." << std::endl;
-    }
-    else
-    {
-        std::cerr << "TerrainParser failed to parse the CSV file from OpenTopography" << std::endl;
-    }
-
-    TerrainRenderer terrainRenderer(terrainParser);
-
-    // Create SFML window
-    sf::Window window(sf::VideoMode({800, 600}), "Terrain Map");
+int main()
+{
+    // Setup window
+    sf::RenderWindow window(sf::VideoMode(sf::Vector2u(WINDOW_WIDTH, WINDOW_HEIGHT)), "Glacier Guides - Trail Viewer");
+    window.setFramerateLimit(60);
     
-
-    // Arbitrary test case path
-    std::vector<int> examplePath = {10, 50, 60 , 80};
-    terrainRenderer.choosePath(examplePath);
-    // TODO: need to fix this loop that builds that renders the window, 
-    // TODO: the event is not initalizing right
-    /*
-    sf::Event event;
-
-    while(window.isOpen())
+    // Grab data
+    // Parse terrain
+    TerrainParser parser;
+    if (!parser.loadFile("map.osm"))
     {
-        while((event = window.pollEvent()) == true) 
+        std::cerr << "Failed to load terrain data.\n";
+        return 1;
+    }
+
+    const auto &points = parser.getPoints();
+    const auto &trails = parser.getTrails();
+
+    std::cout << "Number of points: " << points.size() << std::endl;
+    std::cout << "Number of trails: " << trails.size() << std::endl;
+
+    // Find bounds for coordinate normalization
+    double minLon = std::numeric_limits<double>::max();
+    double maxLon = std::numeric_limits<double>::lowest();
+    double minLat = std::numeric_limits<double>::max();
+    double maxLat = std::numeric_limits<double>::lowest();
+
+    for (const auto &point : points)
+
+    {
+        minLon = std::min(minLon, point.longitude);
+        maxLon = std::max(maxLon, point.longitude);
+        minLat = std::min(minLat, point.latitude);
+        maxLat = std::max(maxLat, point.latitude);
+    }
+
+    // Build graph
+    Graph graph;
+    for (const auto &point : points)
+
+    {
+        graph.addPin(point.id, point.latitude, point.longitude);
+    }
+
+    // Add edges for trails
+    for (const auto &trail : trails)
+
+    {
+        const auto &pts = trail.trailPoints;
+        for (size_t i = 0; i + 1 < pts.size(); ++i)
+
         {
-            if (event.is == sf::Event::Closed) 
+            // Calculate distance as weight using Euclidean distance formula 
+            const auto &p1 = points[i];
+            const auto &p2 = points[i + 1];
+            double weight = std::sqrt(
+                std::pow(p2.longitude - p1.longitude, 2) +
+                std::pow(p2.latitude - p1.latitude, 2));
+            graph.addEdge(pts[i], pts[i + 1], weight);
+        }
+    }
+
+    // Main rendering loop
+    while (window.isOpen())
+
+    {
+        if (const std::optional<sf::Event> event = window.pollEvent())
+
+        {
+            if (event->is<sf::Event::Closed>())
             {
                 window.close();
             }
+
+            //TODO: add in keyboard controls
         }
-    }
-    
-    // Clear screen and render the terrain and the drawn path
-    mapWindow.clear();
-    terrainRenderer.renderTerrain(mapWindow);
-    mapWindow.display();
-    */
 
-    return 0;
-}
+        window.clear(sf::Color::Black);
 
+        // Draw trails
+        for (const auto &trail : trails)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-#include <iostream>
-#include "TerrainParser.h"
-#include "TerrainRenderer.h"
-#include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
-
-int main()
- {
-    // Create terrain parser object
-    TerrainParser terrainParser;
-    // Check if terrain parsing for OpenSkiMap works correctly
-    if (terrainParser.loadFile("map.osm"))
-    {
-        std::cout << "TerrainParser parsed" << terrainParser.getPoints().size() << " points from OpenSkiMap." << std::endl;
-        std::cout << "TerrainParser parsed" << terrainParser.getTrails().size() << " trails from OpenSkiMap." << std::endl;
-    }
-    else
-    {
-        std::cerr << "TerrainParser failed to parse the OSM file from OpenSkiMap" << std::endl;
-    }
-
-    // Check if parsing for elevation data from OpenTopography works correctly
-    if (terrainParser.loadElevationFile("elevation.csv"))
-    {
-        std::cout << "TerrainParser parsed" << terrainParser.getElevation().size() << " points from OpenTopography." << std::endl;
-    }
-    else
-    {
-        std::cerr << "TerrainParser failed to parse the CSV file from OpenTopography" << std::endl;
-    }
-
-    // Initialize TerrainRenderer
-    TerrainRenderer terrainRenderer(terrainParser);
-
-    // Create SFML window
-    // Error was there because 3.0 has different constructor syntax fo video mode
-    sf::RenderWindow mapWindow(sf::VideoMode({800,600}), "Terrain Map");
-
-    // Arbitrary test case path;
-    std::vector<int> examplePath = {10, 50, 60 , 80};
-    terrainRenderer.choosePath(examplePath);
-
-    
-    // Now write code in to render window for sfml using events
-    while (mapWindow.isOpen())
-    {
-        // Not sure why errors here
-        //try to rewrite with the swtich case style type of event handling
-        sf::Event event;
-        while(mapWindow.pollEvent(event))
         {
-            if (event.type == sf::Event::Closed)
-            {
-                mapWindow.close();
-            }
+            const auto &ids = trail.trailPoints;
+            if (ids.size() < 2)
+                continue;
 
-            // Clear screen and render the terrain and the drawn path
-            mapWindow.clear();
-            terrainRenderer.renderTerrain(mapWindow);
-            mapWindow.display();
+            sf::VertexArray lines(sf::PrimitiveType::LineStrip, ids.size());
+            for (size_t i = 0; i < ids.size(); ++i)
+            {
+                const auto &p = points[i];
+                sf::Vector2f pos = normalizeCoordinates(p.longitude, p.latitude, minLon, maxLon, minLat, maxLat);
+                lines[i].position = pos;
+                lines[i].color = sf::Color(200, 200, 200); // light gray
+            }
+            window.draw(lines);
         }
+
+        window.display();
     }
-        
 
     return 0;
 }
-*/
