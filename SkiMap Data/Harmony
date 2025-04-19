@@ -1,0 +1,48 @@
+<osm version="0.6" generator="openstreetmap-cgimap 2.0.1 (3242657 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+<way id="1078083831" visible="true" version="3" changeset="123581160" timestamp="2022-07-13T21:02:14Z" user="tcarlisle" uid="13765300">
+<nd ref="2660447521"/>
+<nd ref="2660448327"/>
+<nd ref="2660447535"/>
+<nd ref="2660448285"/>
+<nd ref="2660447577"/>
+<nd ref="2660448287"/>
+<nd ref="2660447900"/>
+<nd ref="2660447956"/>
+<nd ref="2660447859"/>
+<nd ref="2660447598"/>
+<nd ref="2660447546"/>
+<nd ref="2660447555"/>
+<nd ref="2660447913"/>
+<nd ref="2660447596"/>
+<nd ref="2660447857"/>
+<nd ref="9884176791"/>
+<nd ref="2660448260"/>
+<nd ref="2660447741"/>
+<nd ref="2660447780"/>
+<nd ref="2660447835"/>
+<nd ref="2660447742"/>
+<nd ref="2660448023"/>
+<nd ref="2660448016"/>
+<nd ref="2660448028"/>
+<nd ref="2660447951"/>
+<nd ref="2660447937"/>
+<nd ref="2660447960"/>
+<nd ref="2660448122"/>
+<nd ref="2660447607"/>
+<nd ref="9886002149"/>
+<nd ref="2660448490"/>
+<nd ref="2660447774"/>
+<nd ref="2660448267"/>
+<nd ref="2660447930"/>
+<nd ref="9884170775"/>
+<nd ref="9884170777"/>
+<nd ref="2660448271"/>
+<nd ref="9884170779"/>
+<nd ref="2660448262"/>
+<nd ref="2660448526"/>
+<nd ref="361254632"/>
+<tag k="name" v="Harmony"/>
+<tag k="piste:difficulty" v="intermediate"/>
+<tag k="piste:type" v="downhill"/>
+</way>
+</osm>
