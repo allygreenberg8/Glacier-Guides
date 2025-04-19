@@ -122,8 +122,7 @@ bool TerrainParser::loadElevationFile(const std::string& fileName)
     // This int will be used to skip over the first header line of the csv file (first line = 0)
     int lineNumber = 0;
 
-    // Iterate through the lines of the csv file and store the latitude, longitude, and elevation data for each point in the Elevation struct
-    // object and store that in a vector that is a member of class TerrainParser
+    // Iterate through the lines of the csv file and store the latitude, longitude, and elevation data for each point
     while (std::getline(ElevationFile, csvLine))
     {
         // Checks if line is first (ie. header) line
@@ -138,7 +137,6 @@ bool TerrainParser::loadElevationFile(const std::string& fileName)
         std::string latitudeString;
         std::string longitudeString;
         std::string elevationString;
-        
         std::getline(data, latitudeString, ',');
         std::getline(data, longitudeString, ',');
         std::getline(data, elevationString, ',');
@@ -148,10 +146,12 @@ bool TerrainParser::loadElevationFile(const std::string& fileName)
         {
             // Instantiate Elevation struct object
             Elevation elevationPoint;
+            
             // Convert elevation, longitude, and latitude data for each elevationPoint from strings to doubles
             elevationPoint.elevation = std::stod(elevationString);
             elevationPoint.longitude = std::stod(longitudeString);
             elevationPoint.latitude = std::stod(latitudeString);
+            
             // Add this elevationPoint object to the list of elevation points
             elevationPtData.push_back(elevationPoint);
         }
