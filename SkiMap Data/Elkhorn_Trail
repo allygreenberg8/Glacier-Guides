@@ -1,0 +1,137 @@
+<osm version="0.6" generator="openstreetmap-cgimap 2.0.1 (2527456 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+<way id="445630451" visible="true" version="7" changeset="162411798" timestamp="2025-02-12T01:13:07Z" user="HappyTrails77" uid="22376262">
+<nd ref="12276998038"/>
+<nd ref="12580573680"/>
+<nd ref="12580573679"/>
+<nd ref="12580573678"/>
+<nd ref="12580573677"/>
+<nd ref="12580573676"/>
+<nd ref="12580573675"/>
+<nd ref="12580573674"/>
+<nd ref="12580573673"/>
+<nd ref="12580573672"/>
+<nd ref="12580573671"/>
+<nd ref="12580573670"/>
+<nd ref="12580573669"/>
+<nd ref="12580573668"/>
+<nd ref="12580573667"/>
+<nd ref="12580573666"/>
+<nd ref="12580573665"/>
+<nd ref="12580573664"/>
+<nd ref="490836762"/>
+<nd ref="12580573663"/>
+<nd ref="12580573662"/>
+<nd ref="12580573661"/>
+<nd ref="12580573660"/>
+<nd ref="12580573659"/>
+<nd ref="12580573658"/>
+<nd ref="12580573657"/>
+<nd ref="12580573656"/>
+<nd ref="12580573655"/>
+<nd ref="12580573654"/>
+<nd ref="12580573653"/>
+<nd ref="12580573652"/>
+<nd ref="12580573651"/>
+<nd ref="12580573650"/>
+<nd ref="12580573649"/>
+<nd ref="12580573648"/>
+<nd ref="12580573647"/>
+<nd ref="12580573646"/>
+<nd ref="4430348126"/>
+<nd ref="4430348127"/>
+<nd ref="4430348128"/>
+<nd ref="4430348129"/>
+<nd ref="4430348130"/>
+<nd ref="4430348131"/>
+<nd ref="4430348132"/>
+<nd ref="4430348133"/>
+<nd ref="4430348134"/>
+<nd ref="4430348135"/>
+<nd ref="4430348136"/>
+<nd ref="4430348137"/>
+<nd ref="4430348138"/>
+<nd ref="4430348139"/>
+<nd ref="4430348140"/>
+<nd ref="4430348141"/>
+<nd ref="4430348142"/>
+<nd ref="4430348143"/>
+<nd ref="4430348144"/>
+<nd ref="4430348145"/>
+<nd ref="4430348146"/>
+<nd ref="4430348147"/>
+<nd ref="4430348148"/>
+<nd ref="4430348149"/>
+<nd ref="4430348150"/>
+<nd ref="4430348151"/>
+<nd ref="11612701263"/>
+<nd ref="4430348152"/>
+<nd ref="4430348153"/>
+<nd ref="4430348154"/>
+<nd ref="4430348155"/>
+<nd ref="4430348156"/>
+<nd ref="4430348157"/>
+<nd ref="4430348158"/>
+<nd ref="4430348159"/>
+<nd ref="4430348160"/>
+<nd ref="4430348161"/>
+<nd ref="4430348162"/>
+<nd ref="4430348163"/>
+<nd ref="4430348164"/>
+<nd ref="4430348165"/>
+<nd ref="4430348166"/>
+<nd ref="4430348167"/>
+<nd ref="4430348168"/>
+<nd ref="4430348169"/>
+<nd ref="4430348170"/>
+<nd ref="4430348171"/>
+<nd ref="4430348172"/>
+<nd ref="490705449"/>
+<nd ref="4430376941"/>
+<nd ref="4430376942"/>
+<nd ref="490705444"/>
+<nd ref="4430376943"/>
+<nd ref="4430376944"/>
+<nd ref="4430376945"/>
+<nd ref="4430376946"/>
+<nd ref="4430376947"/>
+<nd ref="4430376948"/>
+<nd ref="4430376949"/>
+<nd ref="4430376950"/>
+<nd ref="4430376951"/>
+<nd ref="4430376952"/>
+<nd ref="4430376953"/>
+<nd ref="4430376954"/>
+<nd ref="4430376955"/>
+<nd ref="4430376956"/>
+<nd ref="4430376957"/>
+<nd ref="12278760054"/>
+<nd ref="4430376958"/>
+<nd ref="12113108912"/>
+<nd ref="4430376959"/>
+<nd ref="4430376960"/>
+<nd ref="4430376961"/>
+<nd ref="4430376962"/>
+<nd ref="4430376963"/>
+<nd ref="4430376964"/>
+<nd ref="12278760053"/>
+<nd ref="4430376965"/>
+<nd ref="12113108700"/>
+<nd ref="4430376966"/>
+<tag k="bicycle" v="yes"/>
+<tag k="check_date" v="2024-10-17"/>
+<tag k="description" v="Intermediate Difficulty designated summer hiking/biking trail"/>
+<tag k="dog" v="yes"/>
+<tag k="highway" v="path"/>
+<tag k="lit" v="no"/>
+<tag k="mtb:scale:imba" v="2"/>
+<tag k="name" v="Elkhorn Trail"/>
+<tag k="piste:difficulty" v="intermediate"/>
+<tag k="piste:type" v="downhill"/>
+<tag k="smoothness" v="bad"/>
+<tag k="source" v="local knowledge"/>
+<tag k="stroller" v="no"/>
+<tag k="surface" v="dirt"/>
+<tag k="website" v="https://scene7.vailresorts.com/is/image/vailresorts/20240613_BC_summer-trail_map_001?wid=4000&hei=3428&fit=constrain,1&resMode=sharp2"/>
+<tag k="wheelchair" v="no"/>
+</way>
+</osm>
