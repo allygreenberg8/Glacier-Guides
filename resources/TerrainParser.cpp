@@ -1,74 +1,139 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <map>
-#include <unordered_map>
-#include <fstream>
-#include <sstream>
-#include "pugixml.hpp"
+#include "TerrainParser.h"
 
-// Represents a point from OpenSkiMap
-struct Point
+
+// Returns the list of parsed points
+const std::vector<Point>& TerrainParser::getPoints() const
 {
-    // OpenSkiMap point ID
-    long long id;
-    // Longitude coordinate
-    double longitude;
-    // Latitude coordinate
-    double latitude;
-};
+    return points;
+}
 
-// Represents a path from OpenSkiMap
-struct Trail
+
+// Returns the list of parsed trails
+const std::vector<Trail>& TerrainParser::getTrails() const
 {
-    // Unique ID for the path
-    long long id;
-    // IDs of points that make up this path
-    std::vector<long long> trailPoints;
-    // Name of the path, if available
-    std::string trailName;
-    // Type of path (e.g., trail or lift)
-    std::string trailType;
-};
+    return trails;
+}
 
-// Represents a point with elevation data
-// Separate struct because elevation data comes from OpenTopography CSV files
-struct Elevation
+
+// Returns the list of parsed elevation data points
+const std::vector<Elevation>& TerrainParser::getElevation() const
 {
-    // Elevation at the point
-    double elevation;
-    // Latitude coordinate
-    double latitude;
-    // Longitude coordinate
-    double longitude; 
-};
+    return elevationPtData;
+}
 
-// Parses and stores trail and elevation data from OpenSkiMap and OpenTopography
-class TerrainParser
+
+// Loads an OSM file from OpenSkiMap
+bool TerrainParser::loadFile(const std::string& fileName)
 {
-private:
-    // Stored points that make up trails
-    std::vector<Point> points;
-    // Stored trails (each is a group of points)
-    std::vector<Trail> trails;
-    // Map for quick access to points by their OpenSkiMap ID
-    std::unordered_map<long long, Point> skiMap;
-    // Parsed elevation data points
-    std::vector<Elevation> elevationPtData;
-    // Parses point data from OpenSkiMap XML nodes
-    void pointParser(const pugi::xml_node& point);
-    // Parses trail data from OpenSkiMap XML nodes
-    void trailParser(const pugi::xml_node& trail);
+    pugi::xml_document osmFile;
 
-public:
-    // Loads OpenSkiMap OSM file, returns true if successful
-    bool loadFile(const std::string& fileName);
-    // Loads OpenTopography CSV file, returns true if successful
-    bool loadElevationFile(const std::string& filename);
-    // Returns stored points
-    const std::vector<Point>& getPoints() const;
-    // Returns stored trails
-    const std::vector<Trail>& getTrails() const;
-    // Returns stored elevation data
-    const std::vector<Elevation>& getElevation() const;
-};
+    if (!osmFile.load_file(fileName.c_str()))
+    {
+        std::cerr << "Failed to load OSM file: " << fileName << std::endl;
+        return false;
+    }
+
+    // Parse all node elements under the osm root
+    for (pugi::xml_node point : osmFile.child("osm").children("node"))
+    {
+        pointParser(point);
+    }
+
+    // Parse all way elements under the osm root
+    for (pugi::xml_node trail : osmFile.child("osm").children("way"))
+    {
+        trailParser(trail);
+    }
+
+    return true;
+}
+
+
+// Parses a point from an OSM node element
+void TerrainParser::pointParser(const pugi::xml_node& point)
+{
+    Point p;
+    p.id = point.attribute("id").as_llong();
+    p.latitude = point.attribute("lat").as_double();
+    p.longitude = point.attribute("lon").as_double();
+    points.push_back(p);
+    skiMap[p.id] = p;
+}
+
+
+// Parses a trail from an OSM way element
+void TerrainParser::trailParser(const pugi::xml_node& trail)
+{
+    Trail t;
+    t.id = trail.attribute("id").as_llong();
+
+    // Collect all node references that make up the trail
+    for (pugi::xml_node path_node : trail.children("nd"))
+    {
+        long long reference = path_node.attribute("ref").as_llong();
+        t.trailPoints.push_back(reference);
+    }
+
+    // Extract metadata tags for the trail
+    for (pugi::xml_node xmlTag : trail.children("tag"))
+    {
+        std::string tagKey = xmlTag.attribute("k").as_string();
+        std::string tagValue = xmlTag.attribute("v").as_string();
+
+        if (tagKey == "name")
+        {
+            t.trailName = tagValue;
+        }
+        else if (tagKey == "aerialway" || tagKey == "piste:type")
+        {
+            t.trailType = tagValue;
+        }
+    }
+
+    trails.push_back(t);
+}
+
+
+// Loads elevation data from an OpenTopography CSV file
+bool TerrainParser::loadElevationFile(const std::string& fileName)
+{
+    std::ifstream ElevationFile(fileName);
+
+    if (!ElevationFile.is_open())
+    {
+        std::cerr << "Failed to open elevation CSV file: " << fileName << std::endl;
+        return false;
+    }
+
+    std::string csvLine;
+    int lineNumber = 0;
+
+    while (std::getline(ElevationFile, csvLine))
+    {
+        if (lineNumber == 0)
+        {
+            // Skip header file
+            lineNumber++;
+            continue;
+        }
+
+        std::stringstream data(csvLine);
+        std::string latitudeString, longitudeString, elevationString;
+
+        std::getline(data, latitudeString, ',');
+        std::getline(data, longitudeString, ',');
+        std::getline(data, elevationString, ',');
+
+        if (!latitudeString.empty() && !longitudeString.empty() && !elevationString.empty())
+        {
+            Elevation elevationPoint;
+            elevationPoint.elevation = std::stod(elevationString);
+            elevationPoint.longitude = std::stod(longitudeString);
+            elevationPoint.latitude = std::stod(latitudeString);
+            elevationPtData.push_back(elevationPoint);
+        }
+    }
+
+    ElevationFile.close();
+    return true;
+}
