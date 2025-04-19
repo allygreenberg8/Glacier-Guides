@@ -116,6 +116,7 @@ void TerrainRenderer::drawPathLine(sf::RenderWindow& window)
         return;
     }
 
+    // Iterate through the points we stored and make line connecting them
     sf::VertexArray path(sf::PrimitiveType::LineStrip, pathPoints.size());
     for (size_t i = 0; i < pathPoints.size(); ++i)
     {
