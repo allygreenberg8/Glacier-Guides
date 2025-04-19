@@ -3,7 +3,6 @@
 #include <list>
 #include <vector>
 #include "TerrainParser.h"
-#include "TerrainParser.cpp"
 #include <cmath>
 #include <limits>
 #include <queue>

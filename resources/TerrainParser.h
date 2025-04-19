@@ -1,4 +1,7 @@
-#pragma once
+#ifndef TERRAIN_PARSER_H
+#define TERRAIN_PARSER_H
+
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -80,3 +83,4 @@ public:
     const std::vector<Elevation>& getElevation() const;
 };
 
+#endif // TERRAIN_PARSER_H
