@@ -74,7 +74,7 @@ void TerrainParser::trailParser(const pugi::xml_node& trail)
         t.trailPoints.push_back(reference);
     }
 
-    // Extract metadata tags for the trail
+    // Extract tags for the trail (ie. name and type of trail)
     for (pugi::xml_node xmlTag : trail.children("tag"))
     {
         std::string tagKey = xmlTag.attribute("k").as_string();
