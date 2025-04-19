@@ -1,0 +1,45 @@
+<osm version="0.6" generator="openstreetmap-cgimap 2.0.1 (2270276 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+<way id="216067713" visible="true" version="9" changeset="161662344" timestamp="2025-01-23T07:03:54Z" user="zanderpxl" uid="22414431">
+<nd ref="4019410674"/>
+<nd ref="2254431943"/>
+<nd ref="2254432251"/>
+<nd ref="2254431993"/>
+<nd ref="2254431995"/>
+<nd ref="2254431636"/>
+<nd ref="2254431617"/>
+<nd ref="2254431653"/>
+<nd ref="2254431647"/>
+<nd ref="2254431595"/>
+<nd ref="12492661689"/>
+<nd ref="2254432229"/>
+<nd ref="2254432233"/>
+<nd ref="2254432067"/>
+<nd ref="2254432080"/>
+<nd ref="2254432110"/>
+<nd ref="2465167852"/>
+<nd ref="2254432204"/>
+<nd ref="2254432199"/>
+<nd ref="2254432022"/>
+<nd ref="2465167806"/>
+<nd ref="2465167821"/>
+<nd ref="2465167751"/>
+<nd ref="2254432091"/>
+<nd ref="12492514477"/>
+<nd ref="12492514478"/>
+<nd ref="12492514479"/>
+<nd ref="1973288433"/>
+<nd ref="12492514480"/>
+<nd ref="12492514481"/>
+<nd ref="12492514482"/>
+<nd ref="12492514483"/>
+<nd ref="12492514484"/>
+<nd ref="12492514485"/>
+<nd ref="12492514486"/>
+<nd ref="12492514487"/>
+<nd ref="12492514488"/>
+<nd ref="12492514489"/>
+<tag k="name" v="Backdoor"/>
+<tag k="piste:difficulty" v="intermediate"/>
+<tag k="piste:type" v="downhill"/>
+</way>
+</osm>
