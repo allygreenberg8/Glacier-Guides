@@ -1,7 +1,3 @@
-#ifndef TERRAIN_PARSER_H
-#define TERRAIN_PARSER_H
-
-
 #include <iostream>
 #include <vector>
 #include <string>
@@ -11,76 +7,68 @@
 #include <sstream>
 #include "pugixml.hpp"
 
-
-// Struct representing variables for each point selected on OpenSkiMap
+// Represents a point from OpenSkiMap
 struct Point
 {
     // OpenSkiMap point ID
     long long id;
-    // Longitude variable
+    // Longitude coordinate
     double longitude;
-    // Latitude variable
+    // Latitude coordinate
     double latitude;
 };
 
-
-// Struct representing variables/characteristics of the path chosen in OpenSkiMap
+// Represents a path from OpenSkiMap
 struct Trail
 {
-    // Unique ID for path from OpenSkiMap
+    // Unique ID for the path
     long long id;
-    // Points that make up this path (container of xml_node references)
+    // IDs of points that make up this path
     std::vector<long long> trailPoints;
-    // If name available, store name of path here:
+    // Name of the path, if available
     std::string trailName;
-    // Stores what type of trail the the path is (ie. trail or lift)
+    // Type of path (e.g., trail or lift)
     std::string trailType;
 };
 
-
-// Struct reprsenting point with elevation data
-// Needed to create separate struct for this because will need to get data from OpenTopography:
-    // Therefore parsing will be different as file types will be .csv
+// Represents a point with elevation data
+// Separate struct because elevation data comes from OpenTopography CSV files
 struct Elevation
 {
-    // Store elevation at specified point
+    // Elevation at the point
     double elevation;
-    // Stores latitude of specified point
+    // Latitude coordinate
     double latitude;
-    // Store longitude of specified point
+    // Longitude coordinate
     double longitude; 
 };
 
-
-// Class that contains the member variable and functions that will be used to parse and store the data from
-// OpenSkiMap and OpenTopography for trail and elevation data.
+// Parses and stores trail and elevation data from OpenSkiMap and OpenTopography
 class TerrainParser
 {
 private:
-    // Vector holding stored points that will make up each trail
+    // Stored points that make up trails
     std::vector<Point> points;
-    // Vector holding stored all the trails stored (each trail is a specific group of points)
+    // Stored trails (each is a group of points)
     std::vector<Trail> trails;
-    // Unordered map for quick access of map points by referencing them by their id given in OpenSkiMap
+    // Map for quick access to points by their OpenSkiMap ID
     std::unordered_map<long long, Point> skiMap;
-    // Vector holder all parsed elevation data for each elevation point
+    // Parsed elevation data points
     std::vector<Elevation> elevationPtData;
-    // Function will parse the xml files from OpenSkiMap to extract all needed points data
+    // Parses point data from OpenSkiMap XML nodes
     void pointParser(const pugi::xml_node& point);
-    // Function will parse the xml files from OpenSkiMap to extract all needed trailcd data
+    // Parses trail data from OpenSkiMap XML nodes
     void trailParser(const pugi::xml_node& trail);
 
 public:
-    // Function loads in OpenSkiMap osm file and returns true if successful
+    // Loads OpenSkiMap OSM file, returns true if successful
     bool loadFile(const std::string& fileName);
-    // Function loads in the OpenTopography csv file and returns true if successful
+    // Loads OpenTopography CSV file, returns true if successful
     bool loadElevationFile(const std::string& filename);
-    // Retrieves stored points and returns a constant reference to them
+    // Returns stored points
     const std::vector<Point>& getPoints() const;
-    // Retrieves stored trails and returns a constant reference to them
+    // Returns stored trails
     const std::vector<Trail>& getTrails() const;
-    // Retrieves stored elevation data and returns a constant reference to them
+    // Returns stored elevation data
     const std::vector<Elevation>& getElevation() const;
 };
-
-#endif // TERRAIN_PARSER_H
