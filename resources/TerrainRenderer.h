@@ -28,19 +28,19 @@ private:
     // Stores a 2D vector of the elevations of the selected terrain
     std::vector<std::vector<double>> elevationData;
 
-    // Stores the start and end points of the chosen pathy
+    // Stores the start and end points of the chosen path
     std::vector<int> pathPoints;
 
-    // Stores the width of the map screen that will display the terrain
+    // Stores the width of the map screen
     int terrainWidth;
     
-    // Stores the height of the map screen that will display the terrain
+    // Stores the height of the map screen
     int terrainHeight;
 
     // Stores the minimum elevation given for path
     double minElevation;
 
-    // Stores the user-input of maximum elevation chosen for path
+    // Stores maximum elevation chosen for path
     double maxElevation;
 
 
