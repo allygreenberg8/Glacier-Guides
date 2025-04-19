@@ -1,0 +1,75 @@
+<osm version="0.6" generator="openstreetmap-cgimap 2.0.1 (2527456 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+<way id="191569242" visible="true" version="5" changeset="161544777" timestamp="2025-01-20T00:55:15Z" user="rsavoye" uid="4606673">
+<nd ref="176919234"/>
+<nd ref="2021533863"/>
+<nd ref="2021533944"/>
+<nd ref="2021533903"/>
+<nd ref="2021533844"/>
+<nd ref="2021533892"/>
+<nd ref="2021533921"/>
+<nd ref="2021533948"/>
+<nd ref="2021533843"/>
+<nd ref="2021533839"/>
+<nd ref="2021533947"/>
+<nd ref="2021533887"/>
+<nd ref="2021533861"/>
+<nd ref="2021533860"/>
+<nd ref="2021533895"/>
+<nd ref="2021533877"/>
+<nd ref="2021533938"/>
+<nd ref="2021533914"/>
+<nd ref="2021533969"/>
+<nd ref="2021533960"/>
+<nd ref="2021533898"/>
+<nd ref="2021533919"/>
+<nd ref="2021533897"/>
+<nd ref="2021533865"/>
+<nd ref="2021533946"/>
+<nd ref="2021533929"/>
+<nd ref="2021533968"/>
+<nd ref="2021533842"/>
+<nd ref="2021533923"/>
+<nd ref="2021533890"/>
+<nd ref="2021533967"/>
+<nd ref="2021533837"/>
+<nd ref="2021533918"/>
+<nd ref="2021533901"/>
+<nd ref="2021533859"/>
+<nd ref="2021533954"/>
+<nd ref="2021533854"/>
+<nd ref="2021533872"/>
+<nd ref="2021533835"/>
+<nd ref="2021533848"/>
+<nd ref="2021533956"/>
+<nd ref="2021533927"/>
+<nd ref="2021533942"/>
+<nd ref="2021533904"/>
+<nd ref="2021533840"/>
+<nd ref="2021533833"/>
+<nd ref="2021533849"/>
+<nd ref="2021533828"/>
+<nd ref="2021533930"/>
+<nd ref="2021533894"/>
+<nd ref="2021533900"/>
+<nd ref="2021533928"/>
+<nd ref="2021533841"/>
+<nd ref="2021533850"/>
+<nd ref="2021533937"/>
+<nd ref="2021533932"/>
+<nd ref="2021533873"/>
+<nd ref="2021533936"/>
+<nd ref="2021533899"/>
+<nd ref="2021533869"/>
+<nd ref="176919290"/>
+<nd ref="2021533922"/>
+<nd ref="2021533952"/>
+<nd ref="2021533953"/>
+<nd ref="2021533958"/>
+<nd ref="2021533964"/>
+<nd ref="2021533908"/>
+<tag k="name" v="Sleepytime Road"/>
+<tag k="piste:difficulty" v="intermediate"/>
+<tag k="piste:type" v="downhill"/>
+<tag k="ref:usfs" v="FR 711.5D"/>
+</way>
+</osm>

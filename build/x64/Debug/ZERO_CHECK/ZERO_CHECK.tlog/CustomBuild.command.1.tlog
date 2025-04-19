@@ -1,0 +1,10 @@
+^C:\USERS\BGRIS\CLIONPROJECTS\GLACIERLIGMA\GLACIER-GUIDES\BUILD\CMAKEFILES\947D6BA9F903123DE01FF318A66CEE6E\GENERATE.STAMP.RULE
+setlocal
+C:\Users\bgris\Downloads\mingw64\bin\cmake.exe -SC:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides -BC:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides/build/GlacierGuides.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

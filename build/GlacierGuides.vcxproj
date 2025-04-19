@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F3D8DF66-1D61-3A10-94C7-6190EAC2ACD9}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>GlacierGuides</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\build\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">GlacierGuides.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">GlacierGuides</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\build\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">GlacierGuides.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">GlacierGuides</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\build\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">GlacierGuides.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">GlacierGuides</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\build\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">GlacierGuides.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">GlacierGuides</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides/resources/third_party/SFML/include"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\sfml-graphics-d.lib;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\sfml-window-d.lib;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\sfml-system-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides/build/Debug/GlacierGuides.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides/build/Debug/GlacierGuides.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides/resources/third_party/SFML/include"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\sfml-graphics.lib;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\sfml-window.lib;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\sfml-system.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides/build/Release/GlacierGuides.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides/build/Release/GlacierGuides.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides/resources/third_party/SFML/include"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\sfml-graphics-d.lib;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\sfml-window-d.lib;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\sfml-system-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides/build/MinSizeRel/GlacierGuides.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides/build/MinSizeRel/GlacierGuides.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides/resources/third_party/SFML/include"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\sfml-graphics-d.lib;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\sfml-window-d.lib;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\sfml-system-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides/build/RelWithDebInfo/GlacierGuides.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides/build/RelWithDebInfo/GlacierGuides.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Users\bgris\Downloads\mingw64\bin\cmake.exe -SC:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides -BC:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides/build --check-stamp-file C:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\build\CMakeFiles\3.27.2\CMakeCCompiler.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\build\CMakeFiles\3.27.2\CMakeCXXCompiler.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\build\CMakeFiles\3.27.2\CMakeRCCompiler.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\build\CMakeFiles\3.27.2\CMakeSystem.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLConfig.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLConfigVersion.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLGraphicsSharedTargets-debug.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLGraphicsSharedTargets-release.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLGraphicsSharedTargets.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLSystemSharedTargets-debug.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLSystemSharedTargets-release.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLSystemSharedTargets.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLWindowSharedTargets-debug.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLWindowSharedTargets-release.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLWindowSharedTargets.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeCInformation.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeCXXInformation.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeCommonLanguageInclude.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeGenericSystem.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeInitializeConfigs.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeLanguageInformation.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeRCInformation.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeSystemSpecificInformation.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Compiler\MSVC-C.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Compiler\MSVC-CXX.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Compiler\MSVC.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Platform\Windows-Initialize.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Platform\Windows-MSVC-C.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Platform\Windows-MSVC.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Platform\Windows.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\Users\bgris\Downloads\mingw64\bin\cmake.exe -SC:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides -BC:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides/build --check-stamp-file C:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\build\CMakeFiles\3.27.2\CMakeCCompiler.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\build\CMakeFiles\3.27.2\CMakeCXXCompiler.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\build\CMakeFiles\3.27.2\CMakeRCCompiler.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\build\CMakeFiles\3.27.2\CMakeSystem.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLConfig.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLConfigVersion.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLGraphicsSharedTargets-debug.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLGraphicsSharedTargets-release.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLGraphicsSharedTargets.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLSystemSharedTargets-debug.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLSystemSharedTargets-release.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLSystemSharedTargets.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLWindowSharedTargets-debug.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLWindowSharedTargets-release.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLWindowSharedTargets.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeCInformation.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeCXXInformation.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeCommonLanguageInclude.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeGenericSystem.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeInitializeConfigs.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeLanguageInformation.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeRCInformation.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeSystemSpecificInformation.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Compiler\MSVC-C.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Compiler\MSVC-CXX.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Compiler\MSVC.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Platform\Windows-Initialize.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Platform\Windows-MSVC-C.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Platform\Windows-MSVC.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Platform\Windows.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\Users\bgris\Downloads\mingw64\bin\cmake.exe -SC:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides -BC:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides/build --check-stamp-file C:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\build\CMakeFiles\3.27.2\CMakeCCompiler.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\build\CMakeFiles\3.27.2\CMakeCXXCompiler.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\build\CMakeFiles\3.27.2\CMakeRCCompiler.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\build\CMakeFiles\3.27.2\CMakeSystem.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLConfig.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLConfigVersion.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLGraphicsSharedTargets-debug.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLGraphicsSharedTargets-release.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLGraphicsSharedTargets.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLSystemSharedTargets-debug.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLSystemSharedTargets-release.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLSystemSharedTargets.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLWindowSharedTargets-debug.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLWindowSharedTargets-release.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLWindowSharedTargets.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeCInformation.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeCXXInformation.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeCommonLanguageInclude.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeGenericSystem.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeInitializeConfigs.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeLanguageInformation.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeRCInformation.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeSystemSpecificInformation.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Compiler\MSVC-C.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Compiler\MSVC-CXX.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Compiler\MSVC.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Platform\Windows-Initialize.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Platform\Windows-MSVC-C.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Platform\Windows-MSVC.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Platform\Windows.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\Users\bgris\Downloads\mingw64\bin\cmake.exe -SC:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides -BC:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides/build --check-stamp-file C:/Users/bgris/CLionProjects/GlacierLigma/Glacier-Guides/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\build\CMakeFiles\3.27.2\CMakeCCompiler.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\build\CMakeFiles\3.27.2\CMakeCXXCompiler.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\build\CMakeFiles\3.27.2\CMakeRCCompiler.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\build\CMakeFiles\3.27.2\CMakeSystem.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLConfig.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLConfigVersion.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLGraphicsSharedTargets-debug.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLGraphicsSharedTargets-release.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLGraphicsSharedTargets.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLSystemSharedTargets-debug.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLSystemSharedTargets-release.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLSystemSharedTargets.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLWindowSharedTargets-debug.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLWindowSharedTargets-release.cmake;C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\third_party\SFML\lib\cmake\SFML\SFMLWindowSharedTargets.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeCInformation.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeCXXInformation.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeCommonLanguageInclude.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeGenericSystem.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeInitializeConfigs.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeLanguageInformation.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeRCInformation.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeSystemSpecificInformation.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Compiler\MSVC-C.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Compiler\MSVC-CXX.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Compiler\MSVC.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Platform\Windows-Initialize.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Platform\Windows-MSVC-C.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Platform\Windows-MSVC.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Platform\Windows.cmake;C:\Users\bgris\Downloads\mingw64\share\cmake-3.27\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\main.cpp" />
+    <ClCompile Include="C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\Graph.cpp" />
+    <ClCompile Include="C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\TerrainParser.cpp" />
+    <ClCompile Include="C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\TerrainRenderer.cpp" />
+    <ClCompile Include="C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\resources\pugixml.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\bgris\CLionProjects\GlacierLigma\Glacier-Guides\build\ZERO_CHECK.vcxproj">
+      <Project>{19B5F317-68A8-3314-971C-E23B870B62AF}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

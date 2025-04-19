@@ -1,0 +1,55 @@
+<osm version="0.6" generator="openstreetmap-cgimap 2.0.1 (2270300 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+<way id="191569249" visible="true" version="5" changeset="162412407" timestamp="2025-02-12T01:56:26Z" user="HappyTrails77" uid="22376262">
+<nd ref="2021643926"/>
+<nd ref="2021643999"/>
+<nd ref="12580905593"/>
+<nd ref="2021643839"/>
+<nd ref="12580905594"/>
+<nd ref="2021644007"/>
+<nd ref="12580905595"/>
+<nd ref="2021644027"/>
+<nd ref="12580905596"/>
+<nd ref="2021643974"/>
+<nd ref="12580905597"/>
+<nd ref="2021643903"/>
+<nd ref="2021643826"/>
+<nd ref="2021643897"/>
+<nd ref="2021643995"/>
+<nd ref="2021643963"/>
+<nd ref="2021643906"/>
+<nd ref="2021643833"/>
+<nd ref="2021643858"/>
+<nd ref="2021643956"/>
+<nd ref="2021643846"/>
+<nd ref="2021644033"/>
+<nd ref="2021643958"/>
+<nd ref="2021643824"/>
+<nd ref="2021643882"/>
+<nd ref="2021643909"/>
+<nd ref="2021643978"/>
+<nd ref="2021644035"/>
+<nd ref="2021643838"/>
+<nd ref="2021643831"/>
+<nd ref="2021644011"/>
+<nd ref="2021643980"/>
+<nd ref="2021643900"/>
+<nd ref="2021644031"/>
+<nd ref="2021644017"/>
+<nd ref="2021643835"/>
+<nd ref="2021533924"/>
+<nd ref="2021533907"/>
+<nd ref="2021533909"/>
+<nd ref="2021533855"/>
+<nd ref="2021533934"/>
+<nd ref="2021533957"/>
+<nd ref="2021533939"/>
+<nd ref="2021533951"/>
+<nd ref="2021533965"/>
+<nd ref="2021533884"/>
+<nd ref="2021533961"/>
+<nd ref="2021533882"/>
+<tag k="name" v="Silk Road - East"/>
+<tag k="piste:difficulty" v="intermediate"/>
+<tag k="piste:type" v="downhill"/>
+</way>
+</osm>

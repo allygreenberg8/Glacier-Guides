@@ -1,0 +1,40 @@
+<osm version="0.6" generator="openstreetmap-cgimap 2.0.1 (2270294 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+<way id="191547031" visible="true" version="4" changeset="160554540" timestamp="2024-12-23T21:31:05Z" user="Bradmofo" uid="20960815">
+<nd ref="7212295583"/>
+<nd ref="7212295584"/>
+<nd ref="7212300685"/>
+<nd ref="7212300686"/>
+<nd ref="7212300687"/>
+<nd ref="7212300688"/>
+<nd ref="7212300698"/>
+<nd ref="7212300689"/>
+<nd ref="7212300690"/>
+<nd ref="7212300691"/>
+<nd ref="7212300692"/>
+<nd ref="7212300693"/>
+<nd ref="7212300694"/>
+<nd ref="7212300695"/>
+<nd ref="12445483356"/>
+<nd ref="7212300696"/>
+<nd ref="2021311260"/>
+<nd ref="2021311142"/>
+<nd ref="2021311130"/>
+<nd ref="2021311253"/>
+<nd ref="2021311118"/>
+<nd ref="2021311090"/>
+<nd ref="2021311080"/>
+<nd ref="2021310945"/>
+<nd ref="2021311231"/>
+<nd ref="2021311024"/>
+<nd ref="2021311032"/>
+<nd ref="2021310999"/>
+<nd ref="2021311088"/>
+<nd ref="2021311200"/>
+<nd ref="2021311014"/>
+<nd ref="2021311201"/>
+<nd ref="2021310964"/>
+<tag k="name" v="Golden Peak Race"/>
+<tag k="piste:difficulty" v="advanced"/>
+<tag k="piste:type" v="downhill"/>
+</way>
+</osm>

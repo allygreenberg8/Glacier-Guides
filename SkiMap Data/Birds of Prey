@@ -1,0 +1,29 @@
+<osm version="0.6" generator="openstreetmap-cgimap 2.0.1 (2270290 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+<way id="258698688" visible="true" version="4" changeset="141365259" timestamp="2023-09-17T04:21:48Z" user="brownieboss2" uid="18109592">
+<nd ref="2640229186"/>
+<nd ref="8792402489"/>
+<nd ref="8792402490"/>
+<nd ref="8792402491"/>
+<nd ref="8792402492"/>
+<nd ref="8792402493"/>
+<nd ref="8792402494"/>
+<nd ref="8792402495"/>
+<nd ref="8792402496"/>
+<nd ref="8792402497"/>
+<nd ref="8792402498"/>
+<nd ref="8792402499"/>
+<nd ref="8792402500"/>
+<nd ref="8792402501"/>
+<nd ref="8792402502"/>
+<nd ref="8792402503"/>
+<nd ref="8792402504"/>
+<nd ref="8792402505"/>
+<nd ref="8792402506"/>
+<nd ref="8792402507"/>
+<nd ref="8792402508"/>
+<nd ref="2640229188"/>
+<tag k="aerialway" v="chair_lift"/>
+<tag k="name" v="Birds of Prey Express Lift"/>
+<tag k="ref" v="9"/>
+</way>
+</osm>
