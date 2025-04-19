@@ -25,7 +25,7 @@ const std::vector<Elevation>& TerrainParser::getElevation() const
 // Function to load OSM files from OpenSkiMap
 bool TerrainParser::loadFile(const std::string& fileName)
 {
-    // creates xml_document object with pugximl framework in order to store file
+    // creates xml object to read file (note: kinda similar to stringstream)
     pugi::xml_document osmFile;
 
     // Checks if file can't be loaded in, and prints error message if this is the case
@@ -37,23 +37,19 @@ bool TerrainParser::loadFile(const std::string& fileName)
         return false;
     }
 
-    // Find every node object in file that is inside each <osm> root element
-    // Use for-loop to iterate through each node object in the root element
-    // osmFile.child("osm") goes to the osm oroot and .children("node") gives all of the children of that node
+    // Use for-loop to iterate through each node object in the root element (ie. kinda like iterating though BST)
     for (pugi::xml_node point : osmFile.child("osm").children("node"))
     {
         pointParser(point);
     }
 
-    // Find every way object in file that is inside each <osm> root element
     // Use for-loop to iterate through each way object in the root element
-    // osmFile.child("osm") goes to the osm oroot and .children("node") gives all of the children of that node and store this in trail variable
     for (pugi::xml_node trail : osmFile.child("osm").children("way"))
     {
         trailParser(trail);
     }
 
-    // Return true because file has been sucessfully loaded
+    // File has been loaded succesfully
     return true;
 }
 
@@ -61,18 +57,12 @@ bool TerrainParser::loadFile(const std::string& fileName)
 // Function for parsing OSM file data for each point and assigning the data to the Point struct variables
 void TerrainParser::pointParser(const pugi::xml_node& point)
 {
-    // Initialize point object from struct in header class
-    // Each point object represents a specific geographical location
+    // Initialize point and assign it a parsed id, latitute, and lonigitude and push it back for storage
     Point p;
-    // Assign id attribute of xml_node to id variable made for struct Point
     p.id = point.attribute("id").as_llong();
-    // Assign lat attribute of xml_node to latitude variable made for struct Point
     p.latitude = point.attribute("lat").as_double();
-    // Assign lon attribute of xml_node to longitude variable made for struct Point
     p.longitude = point.attribute("lon").as_double();
-    // Add this point to vector list of points
     points.push_back(p);
-    // Add the key-value pair of the point id and the node object respectively to the map
     skiMap[p.id] = p;
 }
 
@@ -80,35 +70,29 @@ void TerrainParser::pointParser(const pugi::xml_node& point)
 // Function for parsing OSM file data for each trail (xml way objet) and assigning the data the Trail struct variables
 void TerrainParser::trailParser(const pugi::xml_node& trail)
 {
-    // Initialize trail object from struct in header class
+    // Initialize trail object and its id
     Trail t;
-    // Assign id data from OSM to Trail struct object id variable
     t.id = trail.attribute("id").as_llong();
 
     // Loops through all of the "nd" aka "node references" inside the xml file "way" container/object
     for (pugi::xml_node path_node : trail.children("nd"))
     {
-        // Assign node reference value (equivalent to id for individual point variables)
         long long reference = path_node.attribute("ref").as_llong();
-        // Push this back to trail struct variable that holds all the point/xml_node references of the points that make up the trail
         t.trailPoints.push_back(reference);
     }
 
     // Loops through the metatags inside each way xml "way" object in the xml file to extract the data on what type of trail it is
-    // Each xml tag is stored in xml as a key-value pair and both must be extracted and stored appropriately
     for (pugi::xml_node xmlTag : trail.children("tag"))
     {
-        // store key of xmlTag as variable tagKey
         std::string tagKey = xmlTag.attribute("k").as_string();
-        // store value of xmlTag as variable tagValue
         std::string tagValue = xmlTag.attribute("v").as_string();
-        // If the key equals "name" in xml, assign the trailName to equal the tagValue
+        
         if (tagKey == "name")
         {
             t.trailName = tagValue;
         }
-        // if the tagKey is "aerialway" the trail is a lift, and if the tagKey is "piste:type" it is a trail
-        // Store which type of trail this is (if applicable) in the trailType variable of trail struct object
+            
+        // Note: if the tagKey is "aerialway" the trail is a lift
         else if (tagKey == "aerialway")
         {
             t.trailType = tagValue;
@@ -118,7 +102,7 @@ void TerrainParser::trailParser(const pugi::xml_node& trail)
         {
             t.trailType = tagValue;
         }
-        // Push back this parsed trail to the vector list of trails
+        
         trails.push_back(t);
     }
 }
@@ -127,16 +111,13 @@ void TerrainParser::trailParser(const pugi::xml_node& trail)
 // Function for parsing csv file data from OpenTopography to parse and store elevation data for each map point
 bool TerrainParser::loadElevationFile(const std::string& fileName)
 {
-    // Open the file given in the function parameter
     std::ifstream ElevationFile(fileName);
 
-    // First check if file was opened, and if this is not the case, return error message and false
     if (ElevationFile.is_open() != false)
     {
         std::cerr << "OpenTopography csv file could not be opened in order to find elevation data. File name: " << fileName << std::endl;
     }
 
-    // Instantiate line variable to store each line of the CSV file iterated over by the for-loop
     std::string csvLine;
     // This int will be used to skip over the first header line of the csv file (first line = 0)
     int lineNumber = 0;
@@ -148,24 +129,21 @@ bool TerrainParser::loadElevationFile(const std::string& fileName)
         // Checks if line is first (ie. header) line
         if (lineNumber == 0)
         {
-            // increments line past 0 so we know rest of lines are not first one
             lineNumber += 1;
-            // moves to next iteration
             continue;
         }
 
-        // Creates stringstream object for storing each line and initializes string variables to hold latitude, longitude, and elevation data
+        // Read in latitude, longitude, and elevation data with stringstream
         std::stringstream data(csvLine);
         std::string latitudeString;
         std::string longitudeString;
         std::string elevationString;
         
-        // Read in the latitude, longitude, and elevation data to the string variables initialized
         std::getline(data, latitudeString, ',');
         std::getline(data, longitudeString, ',');
         std::getline(data, elevationString, ',');
 
-        // If latitude, longitude, and elevation data exist for the point, it exists and we will convert this data to doubles and store it
+        // Create point to store if exists
         if (latitudeString.empty() == false && longitudeString.empty() == false && elevationString.empty() == false)
         {
             // Instantiate Elevation struct object
@@ -178,10 +156,9 @@ bool TerrainParser::loadElevationFile(const std::string& fileName)
             elevationPtData.push_back(elevationPoint);
         }
     }
-
-    // Close the csv file
+    
     ElevationFile.close();
-    // Return true to inicate the file was successfully opened and read
+    
     return true;
 
 }
