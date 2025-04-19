@@ -1,1 +1,39 @@
-
+<osm version="0.6" generator="openstreetmap-cgimap 2.0.1 (3529594 spike-06.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+<way id="215945368" visible="true" version="3" changeset="161245672" timestamp="2025-01-11T16:24:02Z" user="Mark09" uid="3092760">
+<nd ref="2253484625"/>
+<nd ref="9549159133"/>
+<nd ref="2253484498"/>
+<nd ref="2253484500"/>
+<nd ref="2253484485"/>
+<nd ref="2253484489"/>
+<nd ref="2253484475"/>
+<nd ref="2253484560"/>
+<nd ref="2253484519"/>
+<nd ref="2253484509"/>
+<nd ref="2253484494"/>
+<nd ref="2253484507"/>
+<nd ref="2253484479"/>
+<nd ref="2253484515"/>
+<nd ref="2254488243"/>
+<nd ref="2253484511"/>
+<nd ref="2253484513"/>
+<nd ref="2253484516"/>
+<nd ref="2253484504"/>
+<nd ref="2253484512"/>
+<nd ref="2253484518"/>
+<nd ref="2253484514"/>
+<nd ref="2253484525"/>
+<nd ref="2253484526"/>
+<nd ref="2253484527"/>
+<nd ref="2253484530"/>
+<nd ref="2253484536"/>
+<nd ref="2253484532"/>
+<nd ref="2253484568"/>
+<nd ref="2253484544"/>
+<nd ref="2253484534"/>
+<nd ref="2253484571"/>
+<tag k="name" v="Logger's Loop"/>
+<tag k="piste:difficulty" v="intermediate"/>
+<tag k="piste:type" v="downhill"/>
+</way>
+</osm>
