@@ -1,0 +1,77 @@
+<osm version="0.6" generator="openstreetmap-cgimap 2.0.1 (2270263 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+<way id="260784715" visible="true" version="4" changeset="123822368" timestamp="2022-07-19T19:46:51Z" user="tcarlisle" uid="13765300">
+<nd ref="2663422012"/>
+<nd ref="2663435606"/>
+<nd ref="9898180411"/>
+<nd ref="2663435603"/>
+<nd ref="2663435649"/>
+<nd ref="2663435656"/>
+<nd ref="2663435638"/>
+<nd ref="2663435661"/>
+<nd ref="2663435689"/>
+<nd ref="9898209126"/>
+<nd ref="2663435668"/>
+<nd ref="2663435747"/>
+<nd ref="2663435629"/>
+<nd ref="2663435725"/>
+<nd ref="2663435581"/>
+<nd ref="2663435718"/>
+<nd ref="2663435704"/>
+<nd ref="2663435719"/>
+<nd ref="2663435615"/>
+<nd ref="9898209125"/>
+<nd ref="2663435657"/>
+<nd ref="2663435740"/>
+<nd ref="9898209124"/>
+<nd ref="2663435598"/>
+<nd ref="2663435594"/>
+<nd ref="2663435579"/>
+<nd ref="2663435642"/>
+<nd ref="2663435654"/>
+<nd ref="2663435658"/>
+<nd ref="2663435623"/>
+<nd ref="2663435614"/>
+<nd ref="2663435613"/>
+<nd ref="2663435734"/>
+<nd ref="2663435724"/>
+<nd ref="9898209123"/>
+<nd ref="2663435609"/>
+<nd ref="2663435610"/>
+<nd ref="2663435736"/>
+<nd ref="9898209122"/>
+<nd ref="2663435680"/>
+<nd ref="2663435660"/>
+<nd ref="2663435575"/>
+<nd ref="9898209121"/>
+<nd ref="9898209120"/>
+<nd ref="2663435692"/>
+<nd ref="2663435572"/>
+<nd ref="2663435705"/>
+<nd ref="2663435665"/>
+<nd ref="2663435604"/>
+<nd ref="2663435729"/>
+<nd ref="9898209119"/>
+<nd ref="2663435735"/>
+<nd ref="2663435732"/>
+<nd ref="2663435639"/>
+<nd ref="2663435648"/>
+<nd ref="2663435576"/>
+<nd ref="2663435743"/>
+<nd ref="2663435640"/>
+<nd ref="2663435694"/>
+<nd ref="2663435714"/>
+<nd ref="9898180413"/>
+<nd ref="9898180414"/>
+<nd ref="2663435631"/>
+<nd ref="9898180415"/>
+<nd ref="9898180416"/>
+<nd ref="2663435641"/>
+<nd ref="2663435599"/>
+<nd ref="2663435608"/>
+<nd ref="2663435717"/>
+<nd ref="1626484109"/>
+<tag k="name" v="Copperhead"/>
+<tag k="piste:difficulty" v="intermediate"/>
+<tag k="piste:type" v="downhill"/>
+</way>
+</osm>
