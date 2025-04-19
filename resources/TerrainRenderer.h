@@ -17,10 +17,10 @@ private:
     void loadTerrain();
 
     // Draw in shading to make map look three dimensional
-    void drawShades(sf::gfx::RenderWindow& mapWindow);
+    void drawShades(sf::RenderWindow& mapWindow);
 
     // Function will draw in the red line path between the chosen starting point and destination
-    void drawPathLine(sf::gfx::RenderWindow& mapWindow);
+    void drawPathLine(sf::RenderWindow& mapWindow);
 
     // This variable stores a reference to the parsed data from the parser function in TerrainRenderer.cpp
     const TerrainParser& terrainParser;
@@ -49,7 +49,7 @@ public:
     TerrainRenderer(const TerrainParser& terrainParser);
 
     // Function that will draw terrain and the chosen paths to the display window
-    void renderTerrain(sf::gfx::RenderWindow& mapWindow);
+    void renderTerrain(sf::RenderWindow& mapWindow);
 
     // Function to take in path calculated by Dijsktra or A* so it can be drawn into map screen
     void choosePath(const std::vector<int>& path);

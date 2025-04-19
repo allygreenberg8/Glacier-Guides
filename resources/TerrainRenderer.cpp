@@ -86,7 +86,7 @@ void TerrainRenderer::loadTerrain()
 
 
 // Function to draw in shading to make map look three dimensional
-void TerrainRenderer::drawShades(sf::gfx::RenderWindow& window)
+void TerrainRenderer::drawShades(sf::RenderWindow& window)
 {
     // First we need to loop through the array of vertexes/points that make up the array
     // Note: assuming array is N by N with N being the number of terrain points (ie. number of vertices)
@@ -106,12 +106,12 @@ void TerrainRenderer::drawShades(sf::gfx::RenderWindow& window)
             // Now make this point on the map into its individual rectangle shape (per SFML protocol)
             // Initilize each to a 10.0 by 10.0 rectangle
             //sf::gfx::RectangleShape point(sf::gfx::Vector2f(10.f,10.f));
-            sf::gfx::RectangleShape point;
-            point.setSize(sf::gfx::Vector2f(10.f,10.f));
-            point.setPosition(column * 10.f, row * 10.f);
+            sf::RectangleShape point;
+            point.setSize(sf::Vector2f(10.f,10.f));
+            point.setPosition(sf::Vector2f(column * 10.f, row * 10.f)); 
             // Initialize color of point with higher elevations being a lighter color
             // Note: multiplying by 255 normalizes the color intensities
-            point.setFillColor(sf::gfx::Color(intensity*255, intensity*255, intensity*255));
+            point.setFillColor(sf::Color(intensity*255, intensity*255, intensity*255));
             // Draw the point to screen now after iteration calculations are complete
             window.draw(point);
         }
@@ -128,7 +128,7 @@ void TerrainRenderer::choosePath(const std::vector<int>& chosenPath)
 
 
 // This function will take the given path points and scale them to fit at the appropriate points in our map and then draw a line between these points in red
-void TerrainRenderer::drawPathLine(sf::gfx::RenderWindow& mapWindow)
+void TerrainRenderer::drawPathLine(sf::RenderWindow& mapWindow)
 {
     // First check if there are no path points (this means a path was not found)
     // If so --> return empty path
@@ -139,7 +139,7 @@ void TerrainRenderer::drawPathLine(sf::gfx::RenderWindow& mapWindow)
 
     // For this next line of code I am getting errors for the type LineStrip that should be a part of the SFML library
     // Create sfml line object for the path
-    sf::gfx::VertexArray path(sf::PrimitiveType::LineStrip, pathStartStop.size());
+    sf::VertexArray path(sf::PrimitiveType::LineStrip, pathStartStop.size());
 
     // Now iterate through array of N by N points and assign each point to a particular element of the array
     for (size_t i = 0; i < pathStartStop.size(); ++i)
@@ -152,8 +152,8 @@ void TerrainRenderer::drawPathLine(sf::gfx::RenderWindow& mapWindow)
         int row = index / terrainWidth;
 
         // Now calculate position and add red color to path point
-        path[i].position = sf::gfx::Vector2f(column*10.f, row*10.f);
-        path[i].color = sf::gfx::Color::Red;
+        path[i].position = sf::Vector2f(column*10.f, row*10.f);
+        path[i].color = sf::Color::Red;
     }
 
     // Now draw this path to the screen
@@ -163,7 +163,7 @@ void TerrainRenderer::drawPathLine(sf::gfx::RenderWindow& mapWindow)
 
 // Function that will draw terrain and the chosen paths to the display window
 // This function will be used in our main.cpp to call all of the needed helper functions for rendering our graph
-void TerrainRenderer::renderTerrain(sf::gfx::RenderWindow& mapWindow)
+void TerrainRenderer::renderTerrain(sf::RenderWindow& mapWindow)
 {
     // Call drawShades function to add shading to make graphical interface look closer to 3-dimensional
     drawShades(mapWindow);

@@ -3,14 +3,16 @@
 #include "TerrainRenderer.h"
 
 // SFML 3.0 module headers
+// SFML Window module
+#include <SFML/Window.hpp>
+#include <SFML/Window/Event.hpp>
+#include <SFML/Window/VideoMode.hpp>
+
+// SFML Graphics module
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/VertexArray.hpp>
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/PrimitiveType.hpp>
-#include <SFML/Window/Event.hpp>
-#include <SFML/Window/VideoMode.hpp>
-
-
 
 int main(){
     // Create terrain parser object
@@ -37,21 +39,24 @@ int main(){
     TerrainRenderer terrainRenderer(terrainParser);
 
     // Create SFML window
-    sf::win::VideoMode videoMode(800, 600);
-    sf::gfx::RenderWindow mapWindow(videoMode, "Terrain Map");
+    sf::Window window(sf::VideoMode({800, 600}), "Terrain Map");
+    
 
     // Arbitrary test case path
     std::vector<int> examplePath = {10, 50, 60 , 80};
     terrainRenderer.choosePath(examplePath);
+    // TODO: need to fix this loop that builds that renders the window, 
+    // TODO: the event is not initalizing right
+    /*
+    sf::Event event;
 
-    while(mapWindow.isOpen())
+    while(window.isOpen())
     {
-        sf::win::Event event;
-        while(mapWindow.pollEvent(event))
+        while((event = window.pollEvent()) == true) 
         {
-            if (event.type == sf::win::Event::Type::Closed)
+            if (event.is == sf::Event::Closed) 
             {
-                mapWindow.close();
+                window.close();
             }
         }
     }
@@ -60,11 +65,10 @@ int main(){
     mapWindow.clear();
     terrainRenderer.renderTerrain(mapWindow);
     mapWindow.display();
+    */
 
     return 0;
 }
-    
-
 
 
 
