@@ -1,0 +1,39 @@
+<osm version="0.6" generator="openstreetmap-cgimap 2.0.1 (2270289 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+<way id="1313893104" visible="true" version="2" changeset="159112782" timestamp="2024-11-14T01:54:05Z" user="mblaz95" uid="1901922">
+<nd ref="9896019420"/>
+<nd ref="12161221225"/>
+<nd ref="12161221226"/>
+<nd ref="12161221227"/>
+<nd ref="12161240843"/>
+<nd ref="12161221228"/>
+<nd ref="12161221229"/>
+<nd ref="12161221230"/>
+<nd ref="12161221231"/>
+<nd ref="12161221232"/>
+<nd ref="12338291991"/>
+<nd ref="12161221234"/>
+<nd ref="12161221235"/>
+<nd ref="12161221236"/>
+<nd ref="12161221237"/>
+<nd ref="12161221238"/>
+<nd ref="12161221239"/>
+<nd ref="12161221240"/>
+<nd ref="12338291988"/>
+<nd ref="12338291989"/>
+<nd ref="12161221241"/>
+<nd ref="12338292003"/>
+<nd ref="12161221242"/>
+<nd ref="12161240807"/>
+<nd ref="12161221243"/>
+<nd ref="12161221244"/>
+<nd ref="12161221245"/>
+<nd ref="12161221246"/>
+<nd ref="12161221247"/>
+<nd ref="12161221248"/>
+<nd ref="12161221249"/>
+<nd ref="12161221250"/>
+<tag k="name" v="Lady of the Lake"/>
+<tag k="piste:difficulty" v="intermediate"/>
+<tag k="piste:type" v="downhill"/>
+</way>
+</osm>
