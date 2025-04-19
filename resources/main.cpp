@@ -1,156 +1,92 @@
+#include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
 #include <iostream>
+#include <unordered_map>
+#include <vector>
 #include "TerrainParser.h"
 #include "TerrainRenderer.h"
+#include "Graph.h"
 
-// SFML 3.0 module headers
-// SFML Window module
-#include <SFML/Window.hpp>
-#include <SFML/Window/Event.hpp>
-#include <SFML/Window/VideoMode.hpp>
-
-// SFML Graphics module
-#include <SFML/Graphics/RenderWindow.hpp>
-#include <SFML/Graphics/VertexArray.hpp>
-#include <SFML/Graphics/Color.hpp>
-#include <SFML/Graphics/PrimitiveType.hpp>
+const float SCALE_X = 5.0f;
+const float SCALE_Y = 5.0f;
 
 int main(){
-    // Create terrain parser object
-    TerrainParser terrainParser;
-    // Check if terrain parsing for OpenSkiMap works correctly
-    if (terrainParser.loadFile("map.osm"))
-    {
-        std::cout << "TerrainParser parsed" << terrainParser.getPoints().size() << " points from OpenSkiMap." << std::endl;
-        std::cout << "TerrainParser parsed" << terrainParser.getTrails().size() << " trails from OpenSkiMap." << std::endl;
-    }
-    else
-    {
-        std::cerr << "TerrainParser failed to parse the OSM file from OpenSkiMap" << std::endl;
-    }
-    if (terrainParser.loadElevationFile("elevation.csv"))
-    {
-        std::cout << "TerrainParser parsed" << terrainParser.getElevation().size() << " points from OpenTopography." << std::endl;
-    }
-    else
-    {
-        std::cerr << "TerrainParser failed to parse the CSV file from OpenTopography" << std::endl;
+    // Setup window
+    sf::RenderWindow window(sf::VideoMode({800, 600}), "Glacier Guides - Trail Viewer");
+    window.setFramerateLimit(60);
+
+    // Parse terrain
+    TerrainParser parser;
+    if (!parser.loadFile("map.osm")) {
+        std::cerr << "Failed to load terrain data.\n";
+        return 1;
     }
 
-    TerrainRenderer terrainRenderer(terrainParser);
+    const auto& points = parser.getPoints();       
+    const auto& trails = parser.getTrails();   
 
-    // Create SFML window
-    sf::Window window(sf::VideoMode({800, 600}), "Terrain Map");
+    // not sure if parser is working right or if my file is right
+    std::cout << "Number of points: " << points.size() << std::endl;
+    std::cout << "Number of trails: " << trails.size() << std::endl;
+
+    //Build graph 
+    Graph graph;
     
-
-    // Arbitrary test case path
-    std::vector<int> examplePath = {10, 50, 60 , 80};
-    terrainRenderer.choosePath(examplePath);
-    // TODO: need to fix this loop that builds that renders the window, 
-    // TODO: the event is not initalizing right
     /*
-    sf::Event event;
+    // Build graph
+    Graph graph;
+    for (const auto& [id, pt] : points) {
+        graph.addPin(id, pt.latitude, pt.longitude, pt.elevation);
+    }
 
-    while(window.isOpen())
-    {
-        while((event = window.pollEvent()) == true) 
-        {
-            if (event.is == sf::Event::Closed) 
-            {
+    for (const auto& trail : trails) {
+        const auto& pts = trail.trailPoints;
+        for (size_t i = 0; i + 1 < pts.size(); ++i) {
+            graph.addEdge(pts[i], pts[i + 1]);
+        }
+    }
+
+    // Example: compute shortest path
+    long startId = trails[0].trailPoints.front();
+    long endId = trails[0].trailPoints.back();
+    std::vector<long long> path = graph.findShortestPathDijkstra(startId, endId);
+
+    // Main loop
+    while (window.isOpen()) {
+        sf::Event event{};
+        while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
                 window.close();
             }
         }
-    }
-    
-    // Clear screen and render the terrain and the drawn path
-    mapWindow.clear();
-    terrainRenderer.renderTerrain(mapWindow);
-    mapWindow.display();
-    */
 
-    return 0;
-}
+        window.clear(sf::Color::Black);
 
+        // Draw trails
+        for (const auto& trail : trails) {
+            const auto& ids = trail.trailPoints;
+            if (ids.size() < 2) continue;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-#include <iostream>
-#include "TerrainParser.h"
-#include "TerrainRenderer.h"
-#include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
-
-int main()
- {
-    // Create terrain parser object
-    TerrainParser terrainParser;
-    // Check if terrain parsing for OpenSkiMap works correctly
-    if (terrainParser.loadFile("map.osm"))
-    {
-        std::cout << "TerrainParser parsed" << terrainParser.getPoints().size() << " points from OpenSkiMap." << std::endl;
-        std::cout << "TerrainParser parsed" << terrainParser.getTrails().size() << " trails from OpenSkiMap." << std::endl;
-    }
-    else
-    {
-        std::cerr << "TerrainParser failed to parse the OSM file from OpenSkiMap" << std::endl;
-    }
-
-    // Check if parsing for elevation data from OpenTopography works correctly
-    if (terrainParser.loadElevationFile("elevation.csv"))
-    {
-        std::cout << "TerrainParser parsed" << terrainParser.getElevation().size() << " points from OpenTopography." << std::endl;
-    }
-    else
-    {
-        std::cerr << "TerrainParser failed to parse the CSV file from OpenTopography" << std::endl;
-    }
-
-    // Initialize TerrainRenderer
-    TerrainRenderer terrainRenderer(terrainParser);
-
-    // Create SFML window
-    // Error was there because 3.0 has different constructor syntax fo video mode
-    sf::RenderWindow mapWindow(sf::VideoMode({800,600}), "Terrain Map");
-
-    // Arbitrary test case path;
-    std::vector<int> examplePath = {10, 50, 60 , 80};
-    terrainRenderer.choosePath(examplePath);
-
-    
-    // Now write code in to render window for sfml using events
-    while (mapWindow.isOpen())
-    {
-        // Not sure why errors here
-        //try to rewrite with the swtich case style type of event handling
-        sf::Event event;
-        while(mapWindow.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-            {
-                mapWindow.close();
+            sf::VertexArray lines(sf::PrimitiveType::LineStrip, ids.size());
+            for (size_t i = 0; i < ids.size(); ++i) {
+                const auto& p = points.at(ids[i]);
+                lines[i].position = sf::Vector2f(p.longitude * SCALE_X, p.latitude * SCALE_Y);
+                lines[i].color = sf::Color(200, 200, 200);  // light gray
             }
-
-            // Clear screen and render the terrain and the drawn path
-            mapWindow.clear();
-            terrainRenderer.renderTerrain(mapWindow);
-            mapWindow.display();
+            window.draw(lines);
         }
-    }
-        
 
+        // Draw shortest path
+        sf::VertexArray pathLine(sf::PrimitiveType::LineStrip, path.size());
+        for (size_t i = 0; i < path.size(); ++i) {
+            const auto& p = points.at(path[i]);
+            pathLine[i].position = sf::Vector2f(p.longitude * SCALE_X, p.latitude * SCALE_Y);
+            pathLine[i].color = sf::Color::Green;
+        }
+        window.draw(pathLine);
+
+        window.display();
+    }
+    */
     return 0;
 }
-*/
