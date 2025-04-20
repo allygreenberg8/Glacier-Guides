@@ -1,5 +1,10 @@
 #include "TerrainParser.h"
 
+/*
+Utilzed this site in setting up and formatting pugximl library
+https://pugixml.org/docs/manual.html
+*/
+
 
 // Returns the list of parsed points
 const std::vector<Point>& TerrainParser::getPoints() const
