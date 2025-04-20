@@ -9,6 +9,10 @@
 #include <limits>
 #include <algorithm>
 
+/*
+I utilized the SFML Tutorial Suggested Formats for this code:
+https://www.sfml-dev.org/tutorials/3.0/graphics/draw/#off-screen-drawing
+*/
 
 // Constructor initializes with a TerrainParser reference and loads terrain data
 TerrainRenderer::TerrainRenderer(const TerrainParser& parser)
