@@ -10,8 +10,13 @@
 #include <algorithm>
 
 /*
-I utilized the SFML Tutorial Suggested Formats for this code:
+-> I utilized the SFML Tutorial Suggested Formats/Templates for this code in order to minimize chances of unfamiliar bugs:
 https://www.sfml-dev.org/tutorials/3.0/graphics/draw/#off-screen-drawing
+
+-> Note: We ran into this problem, as Brody has a Dell computer and Ally has a Macbook, but SFML package installation will vary
+   upon device.
+-> Make sure to download SFML Version 3.0
+
 */
 
 // Constructor initializes with a TerrainParser reference and loads terrain data
@@ -51,9 +56,9 @@ void TerrainRenderer::loadTerrain()
     // Fill in elevationData from elevationPoints
     for (size_t i = 0; i < totalPoints && i < gridSize * gridSize; ++i)
     {
-        size_t x = i % gridSize;
-        size_t y = i / gridSize;
-        elevationData[y][x] = elevationPoints[i].elevation;
+        size_t colNum = i % gridSize;
+        size_t rowNum = i / gridSize;
+        elevationData[rowNum][colNum] = elevationPoints[i].elevation;
     }
 
     // Initialize min and max elevation values
@@ -61,11 +66,12 @@ void TerrainRenderer::loadTerrain()
     maxElevation = std::numeric_limits<double>::lowest();
 
     // Find min and max elevation in the grid
-    for (size_t row = 0; row < gridSize; ++row)
+    for (size_t rowNum = 0; rowNum < gridSize; ++rowNum)
     {
-        for (size_t col = 0; col < gridSize; ++col)
+        for (size_t colNum = 0; colNum < gridSize; ++colNum)
         {
-            double elevation = elevationData[row][col];
+            double elevation = elevationData[rowNum][colNum];
+            // Make subs if value is less than min or greater than max
             if (elevation < minElevation)
             {
                 minElevation = elevation;
@@ -96,6 +102,8 @@ void TerrainRenderer::drawShades(sf::RenderWindow& window)
                 intensity = static_cast<float>((elevation - minElevation) / (maxElevation - minElevation));
             }
 
+            // Note: Ally, you may need to use a separate path or extension for Vector2f on MacBook
+            // I set the shading code here by changing the rel intensities
             sf::RectangleShape rect(sf::Vector2f(10.f, 10.f));
             rect.setPosition(col * 10.f, row * 10.f);
             rect.setFillColor(sf::Color(intensity * 255, intensity * 255, intensity * 255));
@@ -128,6 +136,7 @@ void TerrainRenderer::drawPathLine(sf::RenderWindow& window)
         int col = index % terrainWidth;
         int row = index / terrainWidth;
 
+        // Note: Ally, you may need to use a separate path or extension for Vector2f on MacBook
         int temp = 10.f;
         path[i].position = sf::Vector2f(col * temp, row * temp);
         path[i].color = sf::Color::Red;
