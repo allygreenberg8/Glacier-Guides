@@ -7,6 +7,12 @@
 #include <sstream>
 #include "pugixml.hpp"
 
+/*
+Utilzed this site in setting up and formatting pugximl library
+https://pugixml.org/docs/manual.html
+*/
+
+
 // Represents a point from OpenSkiMap
 struct Point
 {
