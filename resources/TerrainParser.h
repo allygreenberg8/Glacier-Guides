@@ -7,6 +7,12 @@
 #include <sstream>
 #include "pugixml.hpp"
 
+/*
+I utilized the SFML Tutorial Suggested Formats for this code and referenced it here:
+https://www.sfml-dev.org/tutorials/3.0/graphics/draw/#off-screen-drawing
+*/
+
+
 // Represents a point from OpenSkiMap
 struct Point
 {
