@@ -1,8 +1,8 @@
 #include "TerrainParser.h"
 
 /*
-Utilzed this site in setting up and formatting pugximl library
-https://pugixml.org/docs/manual.html
+Utilzed this site in setting up and formatting pugximl library and utilized given templates when given in order to minimize chances of errors I am unfamiliar with
+Link: https://pugixml.org/docs/manual.html
 */
 
 
