@@ -11,8 +11,16 @@
 
 
 /*
-I utilized the SFML Tutorial Suggested Formats for this code and referenced it here:
+-> Both the .cpp and .h have these comments but just wanted to include it in each
+
+-> I utilized the SFML Tutorial Suggested Formats/Templates for this code in order to minimize chances of unfamiliar bugs:
 https://www.sfml-dev.org/tutorials/3.0/graphics/draw/#off-screen-drawing
+
+-> Note: We ran into this problem, as Brody has a Dell computer and Ally has a Macbook, but SFML package installation will vary
+   upon device.
+   
+-> Make sure to download SFML Version 3.0 (will encounter problems with syntax if use older version (ie. Version 2.6)
+
 */
 
 
