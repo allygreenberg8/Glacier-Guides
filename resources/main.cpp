@@ -32,7 +32,17 @@ int main()
     // Grab data
     // Parse terrain
     TerrainParser parser;
-    
+
+    vector<string> fileNames = ["Glacier-Guides/SkiMapData/Age_of_Reason.osm", "Glacier-Guides/SkiMapData/Backdoor.osm", 
+    "Glacier-Guides/SkiMapData/Berries_Upper.osm", "Glacier-Guides/SkiMapData/Birds_of_Prey.osm", "Glacier-Guides/SkiMapData/Boa.osm".
+    "Glacier-Guides/SkiMapData/Cinch_Upper.osm", "Glacier-Guides/SkiMapData/Copperhead.osm", "Glacier-Guides/SkiMapData/Elkhorn_Trail.osm".
+    "Glacier-Guides/SkiMapData/Golden_Peak_Race.osm", "Glacier-Guides/SkiMapData/Harmony.osm". "Glacier-Guides/SkiMapData/Kellys_Toll_Road.osm",
+    "Glacier-Guides/SkiMapData/Lady_of_the_Lake.osm", "Glacier-Guides/SkiMapData/Lodgers_Loop.osm", "Glacier-Guides/SkiMapData/Lookout_Bypass.osm",
+    "Glacier-Guides/SkiMapData/Meadows.osm", "Glacier-Guides/SkiMapData/ParkCity.osm", "Glacier-Guides/SkiMapData/Poppyfields_West.osm",
+     "Glacier-Guides/SkiMapData/RedTail.osm", "Glacier-Guides/SkiMapData/Silk_Road_East.osm", "Glacier-Guides/SkiMapData/Silver_Streak.osm"
+    "Glacier-Guides/SkiMapData/Sleepytime_Road.osm", "Glacier-Guides/SkiMapData/Thaynes_Canyon.osm", "Glacier-Guides/SkiMapData/TheSlot.osm",
+    "Glacier-Guides/SkiMapData/Tycoon.osm"]
+
     // Loops through all OpenSkiMap files and parses the data
     for (int i = 0; i < fileNames.size(); i++)
     {
