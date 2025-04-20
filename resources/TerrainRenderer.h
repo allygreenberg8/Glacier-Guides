@@ -10,6 +10,12 @@
 #include <SFML/System/Vector2.hpp>
 
 
+/*
+I utilized the SFML Tutorial Suggested Formats for this code and referenced it here:
+https://www.sfml-dev.org/tutorials/3.0/graphics/draw/#off-screen-drawing
+*/
+
+
 class TerrainRenderer
 {
 private:
