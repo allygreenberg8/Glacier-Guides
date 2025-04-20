@@ -8,8 +8,11 @@
 #include "pugixml.hpp"
 
 /*
-Utilzed this site in setting up and formatting pugximl library
-https://pugixml.org/docs/manual.html
+-> Included same comment in .cpp but included it here also just in case
+
+-> Utilzed this site in setting up and formatting pugximl library and utilized given templates when given in order to minimize chances of errors I am unfamiliar with
+Link: https://pugixml.org/docs/manual.html
+
 */
 
 
