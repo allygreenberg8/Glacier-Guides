@@ -96,25 +96,22 @@ void TerrainRenderer::drawShades(sf::RenderWindow& window)
         {
             double elevation = elevationData[row][col];
             float intensity = 0.f;
-                if (maxElevation != minElevation) {
-                    intensity = (elevationPoints - minElevation) / (maxElevation - minElevation);
-                }
-                
-            // Now make this point on the map into its individual rectangle shape (per SFML protocol)
-            // Initilize each to a 10.0 by 10.0 rectangle
-            //sf::gfx::RectangleShape point(sf::gfx::Vector2f(10.f,10.f));
-            sf::RectangleShape point;
-            point.setSize(sf::Vector2f(10.f,10.f));
-            point.setPosition(sf::Vector2f(column * 10.f, row * 10.f)); 
-            // Initialize color of point with higher elevations being a lighter color
-            // Note: multiplying by 255 normalizes the color intensities
-            point.setFillColor(sf::Color(intensity*255, intensity*255, intensity*255));
-            // Draw the point to screen now after iteration calculations are complete
-            window.draw(point);
+            
+            if (maxElevation != minElevation)
+            {
+                intensity = static_cast<float>((elevation - minElevation) / (maxElevation - minElevation));
+            }
+
+            // Note: Ally, you may need to use a separate path or extension for Vector2f on MacBook
+            // I set the shading code here by changing the rel intensities
+            sf::RectangleShape rect;
+            rect.setSize({10.f, 10.f});
+            rect.setPosition({col * 10.f, row * 10.f});
+            rect.setFillColor(sf::Color(intensity * 255, intensity * 255, intensity * 255));
+            window.draw(rect);
         }
     }
 }
-
 
 // Function takes in path calculated by Dijsktra or A* so it can be drawn into map screen
 void TerrainRenderer::choosePath(const std::vector<int>& path)

@@ -48,6 +48,8 @@ class Graph{
 
     // Dijkstra's Shortest Path Algorithm
     void findShortestPathDijkstra(int startVertex, const vector<vector<pair<int,int>>>& graph, vector<int>& distances);
+    // A* Search Algorithm
+    void findShortestPathAStar(int startVertex, int endVertex, const vector<vector<pair<int,int>>>& graph, vector<int>& distances);
 
     void buildGraphFromParsed(const TerrainParser& parser);
 

@@ -3,28 +3,15 @@
 #include <iostream>
 #include <unordered_map>
 #include <vector>
+#include <cmath>
 #include "TerrainParser.h"
 #include "TerrainRenderer.h"
 #include "Graph.h"
-
-// Window dimensions
-const unsigned int WINDOW_WIDTH = 800;
-const unsigned int WINDOW_HEIGHT = 600;
-const float SCALE_X = 5.0f;
-const float SCALE_Y = 5.0f;
-
-// Function to normalize coordinates to fit the window
-sf::Vector2f normalizeCoordinates(double longitude, double latitude,
-                                  double minLon, double maxLon,
-                                  double minLat, double maxLat)
-{
-    float x = (longitude - minLon) / (maxLon - minLon) * WINDOW_WIDTH;
-    float y = (latitude - minLat) / (maxLat - minLat) * WINDOW_HEIGHT;
-    return {x, y};
-}
+using namespace std;
 
 int main()
 {
+    /*
     // Setup window
     sf::RenderWindow window(sf::VideoMode(sf::Vector2u(WINDOW_WIDTH, WINDOW_HEIGHT)), "Glacier Guides - Trail Viewer");
     window.setFramerateLimit(60);
@@ -45,101 +32,109 @@ int main()
 
     // Loops through all OpenSkiMap files and parses the data
     for (int i = 0; i < fileNames.size(); i++)
+    // Parse terrain - only going to use one file for testing purposes
+     */
+    
+     TerrainParser parse;
+
+    // Print current working directory for debugging
+    filesystem::path currentPath = filesystem::current_path();
+    cout << "Current working directory: " << currentPath << std::endl;
+
+    // Try to load the file with correct path
+    // Note: this does not work when trying to pull from SkiMap Data folder
+    if (!parse.loadFile("map.osm"))
     {
-        if (!parser.loadFile(fileNames[i]))
-        {
-            std::cerr << "Failed to load terrain data.\n";
-            return 1;
-        }
-
-        parser.loadFile(fileNames[i])
-
-        const auto &points = parser.getPoints();
-        const auto &trails = parser.getTrails();
-
-        std::cout << "Number of points: " << points.size() << std::endl;
-        std::cout << "Number of trails: " << trails.size() << std::endl;
+        cerr << "Failed to load terrain data." << endl;
+        return 1;
     }
+    // get the points and trails from the parser
+    const auto &points = parse.getPoints();
+    const auto &trails = parse.getTrails();
 
-    // Find bounds for coordinate normalization
-    double minLon = std::numeric_limits<double>::max();
-    double maxLon = std::numeric_limits<double>::lowest();
-    double minLat = std::numeric_limits<double>::max();
-    double maxLat = std::numeric_limits<double>::lowest();
-
-    for (const auto &point : points)
-
-    {
-        minLon = std::min(minLon, point.longitude);
-        maxLon = std::max(maxLon, point.longitude);
-        minLat = std::min(minLat, point.latitude);
-        maxLat = std::max(maxLat, point.latitude);
-    }
-
-    // Build graph
+    // build graph
     Graph graph;
     for (const auto &point : points)
-
     {
         graph.addPin(point.id, point.latitude, point.longitude);
     }
 
-    // Add edges for trails
+    // add the edges for the trails wiht the corrects points
     for (const auto &trail : trails)
-
     {
         const auto &pts = trail.trailPoints;
-        for (size_t i = 0; i + 1 < pts.size(); ++i)
-
+        for (size_t i = 0; i + 1 < pts.size(); i++)
         {
-            // Calculate distance as weight using Euclidean distance formula 
-            const auto &p1 = points[i];
-            const auto &p2 = points[i + 1];
-            double weight = std::sqrt(
-                std::pow(p2.longitude - p1.longitude, 2) +
-                std::pow(p2.latitude - p1.latitude, 2));
+            const auto &from = points[pts[i]];
+            const auto &to = points[pts[i + 1]];
+            double weight = sqrt(pow(to.longitude - from.longitude, 2) + pow(to.latitude - from.latitude, 2));
             graph.addEdge(pts[i], pts[i + 1], weight);
         }
     }
 
-    // Main rendering loop
-    while (window.isOpen())
-
+    // choose test points (first and last points)
+    if (trails.empty() || trails[0].trailPoints.size() < 2)
     {
-        if (const std::optional<sf::Event> event = window.pollEvent())
-
-        {
-            if (event->is<sf::Event::Closed>())
-            {
-                window.close();
-            }
-
-            //TODO: add in keyboard controls
-        }
-
-        window.clear(sf::Color::Black);
-
-        // Draw trails
-        for (const auto &trail : trails)
-
-        {
-            const auto &ids = trail.trailPoints;
-            if (ids.size() < 2)
-                continue;
-
-            sf::VertexArray lines(sf::PrimitiveType::LineStrip, ids.size());
-            for (size_t i = 0; i < ids.size(); ++i)
-            {
-                const auto &p = points[i];
-                sf::Vector2f pos = normalizeCoordinates(p.longitude, p.latitude, minLon, maxLon, minLat, maxLat);
-                lines[i].position = pos;
-                lines[i].color = sf::Color(200, 200, 200); // light gray
-            }
-            window.draw(lines);
-        }
-
-        window.display();
+        cerr << "No enough points to test." << endl;
+        return 1;
     }
 
-    return 0;
+    int start = trails[0].trailPoints.front();
+    int end = trails[0].trailPoints.back();
+
+    cout << "Start: " << start << ", End: " << end << endl;
+
+    // Find maximum node ID to size data structures
+    // This prevents excessive memory allocation while ensuring we can index all nodes - was having a seg fault
+    size_t maxNodeId = 0;
+    size_t maxId = 0;
+    for (const auto &[id, _] : graph.getPins())
+    {
+        maxId = max(maxId, static_cast<size_t>(id));
+    }
+    // adjacency list representation
+    // Each index contains a vector of pairs (neighbor_id, weight)
+    // Initialize path and distance tracking for both algorithms
+    vector<vector<pair<int, int>>> allPaths(maxId + 1);
+    vector<int> dijkstraDistances(maxId + 1, numeric_limits<int>::max());
+    vector<int> astarDistances(maxId + 1, numeric_limits<int>::max());
+
+    // distance vectors for both algs
+    for (const auto &[from, edges] : graph.getAdjList())
+    {
+        for (const auto &[to, weight] : edges)
+        {
+            allPaths[to].emplace_back(from, static_cast<int>(weight));
+        }
+    }
+
+    // Dijkstra's Algorithm Time Calculation
+    auto startTime = chrono::high_resolution_clock::now();
+    graph.findShortestPathDijkstra(start, allPaths, dijkstraDistances);
+    auto endTime = chrono::high_resolution_clock::now();
+    auto dijkstraDuration = chrono::duration_cast<chrono::microseconds>(endTime - startTime).count();
+
+    // A* Algorithm Time Calculation
+    startTime = chrono::high_resolution_clock::now();
+    graph.findShortestPathAStar(start, end, allPaths, astarDistances);
+    endTime = chrono::high_resolution_clock::now();
+    auto astarDuration = chrono::duration_cast<chrono::microseconds>(endTime - startTime).count();
+
+    // Print the times
+    cout << "Dijkstra's Algorithm Path: " << dijkstraDuration << " microseconds" << endl;
+    cout << "A* Algorithm: " << astarDuration << " microseconds" << endl;
+
+    // Compare the times
+    if (dijkstraDuration < astarDuration)
+    {
+        cout << "Dijkstra's Algorithm is faster." << endl;
+    }
+    else if (dijkstraDuration > astarDuration)
+    {
+        cout << "A* Algorithm is faster." << endl;
+    }
+    else
+    {
+        cout << "Both algorithms have the same runtime." << endl;
+    }
 }

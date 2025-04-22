@@ -1,3 +1,6 @@
+#ifndef TERRAIN_PARSER_H
+#define TERRAIN_PARSER_H
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -81,3 +84,4 @@ public:
     // Returns stored elevation data
     const std::vector<Elevation>& getElevation() const;
 };
+#endif // TERRAIN_PARSER_H
