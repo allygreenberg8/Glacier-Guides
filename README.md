@@ -3,19 +3,8 @@
 <h2> Table of Contents </h2>
 
 - [Problem Overview and Program Introduction](#problem-overview-and-program-introduction)
-	- [Problem Overview and Program Introduction](#getting-started-with-the-project)
-		- [Step 1: Create Your Project Repository](#step-1-create-your-project-repository)
-		- [Step 2: Repository Name and Visibility](#step-2-repository-name-and-visibility)
-		- [Step 3: Collaboration and Team Members](#step-3-collaboration-and-team-members)
-		- [Step 4: Development](#step-4-development)
-			- [Issues:](#issues)
-			- [Branches](#branches)
-			- [Commits](#commits)
-				- [Guidelines for good commit messages](#guidelines-for-good-commit-messages)
-			- [Pull Requests](#pull-requests)
-	- [Markdown and README](#markdown-and-readme)
-	- [Additional Resources and Documentation:](#additional-resources-and-documentation)
-   		- [Downloadable External Libraries or Repositories Utilized](#downloadable-external-libraries-utilized)
+- [Additional Resources and Documentation:](#additional-resources-and-documentation)
+  - [Downloadable External LibrariesUtilized](#downloadable-external-libraries-utilized)
 
 # Problem Overview and Program Introduction
 
