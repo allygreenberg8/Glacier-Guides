@@ -40,7 +40,3 @@ Therefore, this application balances efficiency with safety to give common and o
 - [Pugixml](https://pugixml.org/)
 - [SFML](https://www.sfml-dev.org/tutorials/1.6/start-vc.php)
 - [vcpkg Public Repository (alternative download option for SFML](https://github.com/microsoft/vcpkg)
-- [READMEs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)
-- [Repo visibility](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility)
-- [Teams and Collaboration](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository)
-- [Working with Files](https://docs.github.com/en/repositories/working-with-files)
