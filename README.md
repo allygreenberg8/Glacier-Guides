@@ -16,8 +16,26 @@ Ski mountaineers, heli-skiers, and backcountry skiers often face difficulties in
 Glacier Guiders is a C++ application that takes parses in data from OpenSkiMap and OpenTopography.org and utilizes this terrain and elevation data to find the shortest, but also safest route (by accounting for a maximum elevation).
 Therefore, this application balances efficiency with safety to give common and off-roads skiiers a useful tool for making the most out of their experience on the slopes.  We will compare Dijkstra’s Algorithm and A* Algorithms to determine which routes are most effective at certain times of the year for the best outcome for these skiers.
 
+# File Structure:
 
-## Additional Resources and Documentation:
+/glacier-guides/
+├── resources/
+│   ├── main.cpp
+│   ├── Graph.h / Graph.cpp
+│   ├── TerrainParser.h / TerrainParser.cpp
+│   ├── TerrainRenderer.h / TerrainRenderer.cpp
+│   ├── 
+│   └── 
+├── data/
+│   ├── openskimap.osm
+│   └── elevation_data.xml
+├── report/Report_43.pdf
+├── README.md
+└── CMakeLists.txt
+
+
+
+# Additional Resources and Documentation:
 
 #### Downloadable External Libraries or Repositories Utilized:
 
