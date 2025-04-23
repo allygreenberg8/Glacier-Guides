@@ -1,8 +1,12 @@
 #include "TerrainParser.h"
 
 /*
-Utilzed this site in setting up and formatting pugximl library and utilized given templates when given in order to minimize chances of errors I am unfamiliar with
+-> Utilzed this site in setting up and formatting pugximl library and utilized given templates when given in order to minimize chances of errors I am unfamiliar with
 Link: https://pugixml.org/docs/manual.html
+
+-> I have also included "Bug Notes" throughout this file indicating places in this code that we feel may have caused errors in our graphics/parsing display but we never able
+   to figure out how to solve
+
 */
 
 
@@ -97,6 +101,11 @@ void TerrainParser::trailParser(const pugi::xml_node& trail)
 
     trails.push_back(t);
 }
+
+
+// Bug Note:
+    // As our graphics did not run or read large amounts of files properly we never got to test the csv files for elevation data, so we are unsure if this logic for reading elevations
+    // and parsing may have presented code errors regarding graphics if it was parsed.
 
 
 // Loads elevation data from an OpenTopography CSV file
