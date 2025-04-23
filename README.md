@@ -3,7 +3,7 @@
 <h2> Table of Contents </h2>
 
 - [Documentation and resources on how to use GitHub for Project 3](#documentation-and-resources-on-how-to-use-github-for-project-3)
-	- [Getting Started with the Project](#getting-started-with-the-project)
+	- [Problem Overview and Program Introduction](#getting-started-with-the-project)
 		- [Step 1: Create Your Project Repository](#step-1-create-your-project-repository)
 		- [Step 2: Repository Name and Visibility](#step-2-repository-name-and-visibility)
 		- [Step 3: Collaboration and Team Members](#step-3-collaboration-and-team-members)
@@ -26,20 +26,12 @@
 # Documentation and resources on how to use GitHub for Project 3
 ## Getting Started with the Project
 
-This is a group project. As such, you're expected to equally contribute to all parts of the project. To ensure everyone is contributing, we have moved this project entirely to GitHub and will use GitHub logs to understand your contributions. To fully leverage the features that GitHub offers, you have to be familiar with what they are and how to use them.
+Ski mountaineers, heli-skiers, and backcountry skiers often face difficulties in finding the most safe paths and trails as the conditions are ever so changing. Although GPS apps already exist for mountain hikers, there are none that account for the steep slopes, elevation and altitude changes, avalanche risk, and weather conditions for skiers. With our project we are aiming to optimize navigation though mountainous terrain for skiers utilizing graph-based pathfinding algorithms.
 
-The goal of this project is to get you familiar with the creative process of software development for a general purpose use and how to use data structures or algorithms for those applications. To go with the professional development that the project offers in terms of general use application, you will also get more familiar with version control and GitHub platform to facilitate the collaborative work with extensive planning and organization abilities.
-
-This step-by-step process is linked in this video **if you aren't familiar with GitHub**:
-- [Introduction to GitHub - General GitHub Features](https://youtu.be/SoEPYV6Nrxo) - Has chapters and closed-captions
-
-The following video has instructions on local development using Git and GitHub:
-- [Local Development with Git and GitHub](https://youtu.be/9MPMu8qBfPo) - Has chapters and closed-captions
-
-To illustrate the development process, we've also made a demo video to show how the GitHub flow looks like on an example:
-- [Mastering GitHub Workflow](https://youtu.be/PbTdROv0TJw) - Has chapters and closed-captions
-
-Here are the instructions on how to Collaborate for Project 3 which are similar to what was covered in the Introduction to GitHub video. You may skip reading these if you have watched that video:
+ These routes are rough, dynamic terrains where skiers need to prioritize safety, optimize on time efficiency, and conserve energy. When finding the best route they must balance these factors which can be difficult to manage when they can change overnight.
+ 
+Glacier Guiders is a C++ application that takes parses in data from OpenSkiMap and OpenTopography.org and utilizes this terrain and elevation data to find the shortest, but also safest route (by accounting for a maximum elevation).
+Therefore, this application balances efficiency with safety to give common and off-roads skiiers a useful tool for making the most out of their experience on the slopes.  We will compare Dijkstra’s Algorithm and A* Algorithms to determine which routes are most effective at certain times of the year for the best outcome for these skiers.
 
 ### Step 1: Create Your Project Repository
 
