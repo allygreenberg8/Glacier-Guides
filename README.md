@@ -26,20 +26,20 @@ For our repository you should follow the standard procedure to clone this reposi
 # File Structure:
 
 ## Glacier-Guides
-### resources
-#### SkMap Data
-#### images
-#### vcpkg
-#### Graph.cpp
-#### Graph.h
-#### TerrainParser.cpp
-#### TerrainParser.h
-#### main.cpp
-#### map.osm
-#### pugiconfig.hpp
-#### pugixml.cpp
-#### pugixml.hpp
-#### MARKDOWN.md
+  ### resources
+    #### SkMap Data
+    #### images
+    #### vcpkg
+    #### Graph.cpp
+    #### Graph.h
+    #### TerrainParser.cpp
+    #### TerrainParser.h
+    #### main.cpp
+    #### map.osm
+    #### pugiconfig.hpp
+    #### pugixml.cpp
+    #### pugixml.hpp
+    #### MARKDOWN.md
 ### CMakeLists.txt
 ### ReadMe.md
 
