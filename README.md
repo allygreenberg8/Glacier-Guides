@@ -2,7 +2,7 @@
 
 <h2> Table of Contents </h2>
 
-- [DProblem Overview and Program Introduction](#problem-overview-and-program-introduction)
+- [Problem Overview and Program Introduction](#problem-overview-and-program-introduction)
 	- [Problem Overview and Program Introduction](#getting-started-with-the-project)
 		- [Step 1: Create Your Project Repository](#step-1-create-your-project-repository)
 		- [Step 2: Repository Name and Visibility](#step-2-repository-name-and-visibility)
@@ -23,8 +23,7 @@
 			- [Issues](#issues-1)
 			- [Bonus Documentation](#bonus-documentation)
 
-# Documentation and resources on how to use GitHub for Project 3
-## Getting Started with the Project
+# Problem Overview and Program Introduction
 
 Ski mountaineers, heli-skiers, and backcountry skiers often face difficulties in finding the most safe paths and trails as the conditions are ever so changing. Although GPS apps already exist for mountain hikers, there are none that account for the steep slopes, elevation and altitude changes, avalanche risk, and weather conditions for skiers. With our project we are aiming to optimize navigation though mountainous terrain for skiers utilizing graph-based pathfinding algorithms.
 
