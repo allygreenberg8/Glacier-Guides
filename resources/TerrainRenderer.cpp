@@ -17,6 +17,9 @@ https://www.sfml-dev.org/tutorials/3.0/graphics/draw/#off-screen-drawing
    upon device.
 -> Make sure to download SFML Version 3.0
 
+-> I have also included "Bug Notes" throughout this file indicating places in this code that we feel may have caused errors in our graphics display but we never able
+   to figure out how to solve
+
 */
 
 // Constructor initializes with a TerrainParser reference and loads terrain data
@@ -30,6 +33,11 @@ TerrainRenderer::TerrainRenderer(const TerrainParser& parser)
     loadTerrain();
 }
 
+
+// Bug Note:
+   // For much of this loadTerrain() function there is a focus on parsing elevation points
+   // As our graphical rendering failed at parsing and rendering to the screen large data sets, we feel the way points were stored in this matrix may have
+   // unnecessarily increased the run time and thus led to code not completing graphics display via sfml
 
 // Function will take the elevation and path data from the parser function
 void TerrainRenderer::loadTerrain()
@@ -102,6 +110,12 @@ void TerrainRenderer::drawShades(sf::RenderWindow& window)
                 intensity = static_cast<float>((elevation - minElevation) / (maxElevation - minElevation));
             }
 
+           
+            // Bug Note:
+              // On this section especially, there were many errors with SFML not recognizing the structures even though they were listed as parts of the SFML library
+              // We could never completely figure out what went wrong and so we feel this may have been one of the point of failure of our rendering logic
+           
+
             // Note: Ally, you may need to use a separate path or extension for Vector2f on MacBook
             // I set the shading code here by changing the rel intensities
             sf::RectangleShape rect;
@@ -120,6 +134,9 @@ void TerrainRenderer::choosePath(const std::vector<int>& path)
 }
 
 
+
+// Bug Note:  We were able to get line drawn to screen to we feel this function was working properly
+
 // Function will draw in the red line path between the chosen starting point and ending point
 void TerrainRenderer::drawPathLine(sf::RenderWindow& window)
 {
@@ -132,6 +149,9 @@ void TerrainRenderer::drawPathLine(sf::RenderWindow& window)
     sf::VertexArray path(sf::PrimitiveType::LineStrip, pathPoints.size());
     for (size_t i = 0; i < pathPoints.size(); ++i)
     {
+       // Bug Note:
+          // Indexing could have been possibly wrong here??
+       
         int index = pathPoints[i];
         int col = index % terrainWidth;
         int row = index / terrainWidth;
