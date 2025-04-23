@@ -3,6 +3,7 @@
 <h2> Table of Contents </h2>
 
 - [Problem Overview and Program Introduction](#problem-overview-and-program-introduction)
+- [Start-Up Instructions](#start-up-instructions)
 - [File Structure](#file-structure)
 - [Contributors](#contributors)
 - [Demo Video](#demo-video)
@@ -18,25 +19,29 @@ These routes are rough, dynamic terrains where skiers need to prioritize safety,
 Glacier Guiders is a C++ application that takes parses in data from OpenSkiMap and utilizes this terrain and elevation data to find the shortest, but also safest route (by accounting for a maximum elevation).
 Therefore, this application balances efficiency with safety to give common and off-roads skiiers a useful tool for making the most out of their experience on the slopes.  We will compare Dijkstra’s Algorithm and A* Algorithms to determine which routes are most effective at certain times of the year for the best outcome for these skiers.
 
+# Start-Up Instructions:
+
+For our repository you should follow the standard procedure to clone this repository and pull it to your local.  We would reccomend installing SFML from the official site that is linked in our "Downloadable External Libraries or Repositories Utilized" section link two.  For an alternative implementation of SFML, the vcpkg submodule can be downloaded as a submodule to your local repository and then must be manually linked via terminal.  The necessary pugixml library files are included in the resources folder so no additional work is needed here to set up that parsing library.  I hope you enjoy our Glacier-Guiders program!
+
 # File Structure:
 
-Glacier-Guides
--> resources
-  -> SkMap Data
-  -> images
-  -> vcpkg
-  -> Graph.cpp
-  -> Graph.h
-  -> TerrainParser.cpp
-  -> TerrainParser.h
-  -> main.cpp
-  -> map.osm
-  -> pugiconfig.hpp
-  -> pugixml.cpp
-  -> pugixml.hpp
-  -> MARKDOWN.md
--> CMakeLists.txt
--> ReadMe.md
+## Glacier-Guides
+### resources
+#### SkMap Data
+#### images
+#### vcpkg
+#### Graph.cpp
+#### Graph.h
+#### TerrainParser.cpp
+#### TerrainParser.h
+#### main.cpp
+#### map.osm
+#### pugiconfig.hpp
+#### pugixml.cpp
+#### pugixml.hpp
+#### MARKDOWN.md
+### CMakeLists.txt
+### ReadMe.md
 
 # Contributors:
 
