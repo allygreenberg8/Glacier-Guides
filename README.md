@@ -53,9 +53,9 @@ These sites are specifically referred to in the rest of the documentation provid
 - [Communicating on GitHub](https://docs.github.com/en/get-started/using-github/communicating-on-github)
 - [Git CLI](https://docs.github.com/en/get-started/using-git/about-git)
 
-#### Repositories
-- [Best practices](https://docs.github.com/en/repositories/creating-and-managing-repositories/best-practices-for-repositories)
-- [Quickstart](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories)
+#### Downloadable External Libraries or Repositories Utilized:
+- [Pugixml](https://pugixml.org/)
+- [SFML](https://www.sfml-dev.org/tutorials/1.6/start-vc.php)
 - [Creating from Template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)
 - [READMEs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)
 - [Repo visibility](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility)
