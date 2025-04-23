@@ -15,13 +15,7 @@
 			- [Pull Requests](#pull-requests)
 	- [Markdown and README](#markdown-and-readme)
 	- [Additional Resources and Documentation:](#additional-resources-and-documentation)
-		- [General Documentation](#general-documentation)
-		- [Additional Specific Documentation](#additional-specific-documentation)
-			- [Quickstart](#quickstart)
-			- [Repositories](#repositories)
-			- [Branches](#branches-1)
-			- [Issues](#issues-1)
-			- [Bonus Documentation](#bonus-documentation)
+   		- [Downloadable External Libraries or Repositories Utilized](#downloadable-external-libraries-utilized)
 
 # Problem Overview and Program Introduction
 
