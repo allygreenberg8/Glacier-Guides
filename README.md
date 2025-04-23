@@ -3,6 +3,7 @@
 <h2> Table of Contents </h2>
 
 - [Problem Overview and Program Introduction](#problem-overview-and-program-introduction)
+- [File Structure](#file-structure)
 - [Additional Resources and Documentation:](#additional-resources-and-documentation)
   - [Downloadable External LibrariesUtilized](#downloadable-external-libraries-utilized)
 
