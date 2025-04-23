@@ -2,7 +2,7 @@
 
 <h2> Table of Contents </h2>
 
-- [Documentation and resources on how to use GitHub for Project 3](#documentation-and-resources-on-how-to-use-github-for-project-3)
+- [DProblem Overview and Program Introduction](#problem-overview-and-program-introduction)
 	- [Problem Overview and Program Introduction](#getting-started-with-the-project)
 		- [Step 1: Create Your Project Repository](#step-1-create-your-project-repository)
 		- [Step 2: Repository Name and Visibility](#step-2-repository-name-and-visibility)
