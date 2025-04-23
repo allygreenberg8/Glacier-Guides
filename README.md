@@ -56,7 +56,7 @@ These sites are specifically referred to in the rest of the documentation provid
 #### Downloadable External Libraries or Repositories Utilized:
 - [Pugixml](https://pugixml.org/)
 - [SFML](https://www.sfml-dev.org/tutorials/1.6/start-vc.php)
-- [Creating from Template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)
+- [vcpkg Public Repository (alternative download option for SFML](https://github.com/microsoft/vcpkg)
 - [READMEs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)
 - [Repo visibility](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility)
 - [Teams and Collaboration](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository)
