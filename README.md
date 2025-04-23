@@ -34,26 +34,9 @@ Therefore, this application balances efficiency with safety to give common and o
 
 
 ## Additional Resources and Documentation:
-### General Documentation
-- [GitHub Docs](https://docs.github.com/en)
-- [GitHub Desktop](https://docs.github.com/en/desktop)
-- [GitHub Get Started](https://docs.github.com/en/get-started)
-- [GitHub Repositories](https://docs.github.com/en/repositories)
-- [GitHub Pull Requests](https://docs.github.com/en/pull-requests)
-- [GitHub Issues](https://docs.github.com/en/issues)
-
-### Additional Specific Documentation
-
-These sites are specifically referred to in the rest of the documentation provided.
-
-#### Quickstart
-- [Git and GitHub Quickstart](https://docs.github.com/en/get-started/start-your-journey)
-- [GitHub Flow](https://docs.github.com/en/get-started/using-github/github-flow)
-- [Connecting to GitHub](https://docs.github.com/en/get-started/using-github/connecting-to-github)
-- [Communicating on GitHub](https://docs.github.com/en/get-started/using-github/communicating-on-github)
-- [Git CLI](https://docs.github.com/en/get-started/using-git/about-git)
 
 #### Downloadable External Libraries or Repositories Utilized:
+
 - [Pugixml](https://pugixml.org/)
 - [SFML](https://www.sfml-dev.org/tutorials/1.6/start-vc.php)
 - [vcpkg Public Repository (alternative download option for SFML](https://github.com/microsoft/vcpkg)
@@ -61,17 +44,3 @@ These sites are specifically referred to in the rest of the documentation provid
 - [Repo visibility](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility)
 - [Teams and Collaboration](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository)
 - [Working with Files](https://docs.github.com/en/repositories/working-with-files)
-
-#### Branches
-- [View Branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/viewing-branches-in-your-repository)
-- [Rename Branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/renaming-a-branch)
-- [Change Default Branch](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/changing-the-default-branch)
-- [Delete & Restore Branch](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/deleting-and-restoring-branches-in-a-pull-request)
-- [Configuring Pull Requests](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges)
-
-#### Issues
-- [Issue Tasklists](https://docs.github.com/en/issues/managing-your-tasks-with-tasklists/quickstart-for-tasklists)
-
-#### Bonus Documentation
-- [Planning and Tracking Your Project](https://docs.github.com/en/issues/planning-and-tracking-with-projects)
-- [Undo changes, commits, pushes, etc.](https://sethrobertson.github.io/GitFixUm/fixup.html)
